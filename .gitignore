@@ -1,0 +1,20 @@
+# Environment Variables (SANGAT RAHASIA - Token Bot)
+.env
+
+# Database SQLite & Backup Data
+data/*.db
+data/backups/
+*.db
+
+# File Logs
+logs/
+*.log
+
+# Python Cache & Virtual Environment
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# VS Code / IDE Settings
+.vscode/
