@@ -96,8 +96,7 @@ class GachaButton(discord.ui.Button):
                 return
 
             self.participants.add(member.id)
-            self.members_map[member.id] = member
-            await database.increment_event_stat(member.id, 'ppkm')            
+            self.members_map[member.id] = member      
 
             # --- UPDATE EMBED SECARA REAL-TIME ---
             try:

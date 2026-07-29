@@ -3,7 +3,6 @@ from discord.ext import commands, tasks
 import asyncio
 import os
 import random
-from datetime import datetime
 from dotenv import load_dotenv
 from core.safety import setup_error_logging, send_error_to_channel
 
@@ -24,18 +23,19 @@ bot = commands.Bot(command_prefix=PREFIX, intents=intents, help_command=None)
 @tasks.loop(minutes=5)
 async def change_status():
     status_list = [
-        discord.Activity(type=discord.ActivityType.watching, name="Event PPKM Di MAHA5 Discord"),
+        discord.Activity(type=discord.ActivityType.watching, name="Event PPKM & Giveaway"),
         discord.Activity(type=discord.ActivityType.listening, name="!!help di Backstage"),
-        discord.Activity(type=discord.ActivityType.playing, name="Kocok Slot Gacha")
+        discord.Activity(type=discord.ActivityType.listening, name="Panggung Sajam & Karaoke")
     ]
     await bot.change_presence(activity=random.choice(status_list))
 
 @bot.event
 async def on_ready():
-    change_status.start()
     if not hasattr(bot, 'start_time'):
+        from datetime import datetime
         bot.start_time = datetime.now()
-
+        
+    change_status.start()
     print(f'=== BOT TELAH ONLINE ===')
     print(f'Username : {bot.user.name}')
     print(f'Prefix   : {PREFIX}')
@@ -43,9 +43,7 @@ async def on_ready():
 
 @bot.event
 async def on_command_error(ctx, error):
-    if isinstance(error, commands.CommandNotFound):
-        return
-    if isinstance(error, commands.CheckFailure):
+    if isinstance(error, (commands.CommandNotFound, commands.CheckFailure)):
         return
     if isinstance(error, commands.MissingPermissions):
         await ctx.send("❌ Kamu tidak memiliki izin untuk menggunakan perintah ini!", delete_after=5)
@@ -64,26 +62,20 @@ async def on_error(event_name, *args, **kwargs):
 
 async def load_extensions():
     try:
-        # 1. Module Event & Undian (cogs/events)
+        # 1. Module Event & Undian
         await bot.load_extension('cogs.events.ppkm')
         await bot.load_extension('cogs.events.giveaway')
 
-        # 2. Module Panggung Musik & Voice (cogs/stage)
+        # 2. Module Panggung Musik & Voice
         await bot.load_extension('cogs.stage.sajam')
         await bot.load_extension('cogs.stage.karaoke')
 
-        # 3. Module Warga, KTP & Ekonomi (cogs/citizen)
-        await bot.load_extension('cogs.citizen.ktp')
-        await bot.load_extension('cogs.citizen.misi')
-        await bot.load_extension('cogs.citizen.economy')
-        await bot.load_extension('cogs.citizen.job')
-
-        # 4. Module Sistem & Admin (cogs/system)
+        # 3. Module Sistem & Admin
         await bot.load_extension('cogs.system.admin')
         await bot.load_extension('cogs.system.help')
         await bot.load_extension('cogs.system.logger')
 
-        print("✨ Seluruh ekstensi (Cogs) berhasil dimuat dengan struktur baru!")
+        print("✨ Seluruh ekstensi Cogs (Event, Stage, System) berhasil dimuat!")
     except Exception as e:
         print(f"❌ Gagal memuat ekstensi: {e}")
 

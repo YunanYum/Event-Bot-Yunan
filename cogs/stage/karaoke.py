@@ -3,7 +3,6 @@ from discord.ext import commands
 import math
 import random
 import traceback
-from datetime import datetime
 from core.database import database
 
 THEME_COLOR = discord.Color.from_rgb(214, 204, 224)
@@ -19,8 +18,6 @@ def get_random_thanks(member_mention: str) -> str:
     return random.choice(phrases)
 
 
-# --- CLASS MODEL SESI KARAOKE PER CHANNEL ---
-
 class KaraokeSession:
     def __init__(self, channel_id: int):
         self.channel_id = channel_id
@@ -28,10 +25,7 @@ class KaraokeSession:
         self.queue = []
         self.active_message = None
         self.skip_votes = set()
-        self.stage_start_time = None  # Waktu mulai tampil penyanyi aktif
 
-
-# --- TOMBOL INTERAKTIF KARAOKE ---
 
 class KaraokeView(discord.ui.View):
     def __init__(self, cog):
@@ -85,8 +79,6 @@ class KaraokeView(discord.ui.View):
             await self.cog.refresh_panel(channel_id)
 
 
-# --- COG MAIN CLASS ---
-
 class KaraokeCog(commands.Cog, name="Karaoke Santai"):
     def __init__(self, bot):
         self.bot = bot
@@ -127,11 +119,8 @@ class KaraokeCog(commands.Cog, name="Karaoke Santai"):
                     except Exception: session.active_message = None
 
                 if data["performer_id"]:
-                    try: 
-                        session.current_performer = await self.bot.fetch_user(data["performer_id"])
-                        session.stage_start_time = datetime.now()  # Inisialisasi timer panggung
-                    except Exception: 
-                        session.current_performer = None
+                    try: session.current_performer = await self.bot.fetch_user(data["performer_id"])
+                    except Exception: session.current_performer = None
 
                 session.queue = []
                 for uid in data["queue_ids"]:
@@ -144,31 +133,18 @@ class KaraokeCog(commands.Cog, name="Karaoke Santai"):
                     restored_rooms += 1
 
             if restored_rooms > 0:
-                print(f"📡 [Karaoke Persistence] Memulihkan sesi karaoke di {restored_rooms} room/channel terpisah.")
+                print(f"📡 [Karaoke Persistence] Memulihkan sesi karaoke di {restored_rooms} room terpisah.")
         except Exception as e:
             print(f"❌ [Karaoke Persistence Error] Gagal memulihkan antrean: {e}")
-
-    # --- HELPER PROTEKSI 1 MENIT STATISTIK KTP ---
-    async def _check_and_record_stage_stat(self, session: KaraokeSession, member: discord.Member) -> bool:
-        """Mengecek apakah penyanyi sudah di atas panggung minimal 60 detik (1 menit)."""
-        if session.stage_start_time:
-            duration = (datetime.now() - session.stage_start_time).total_seconds()
-            if duration >= 60:
-                await database.increment_event_stat(member.id, 'karaoke')
-                return True
-        return False
-
-    # --- LOGIKA OPERASIONAL PER CHANNEL ---
 
     async def add_to_queue(self, channel_id: int, member: discord.Member) -> tuple[bool, str]:
         session = self.get_session(channel_id)
 
         if (session.current_performer and session.current_performer.id == member.id) or (member.id in [m.id for m in session.queue]):
-            return False, "⚠️ Kamu sudah berada di dalam antrean atau sedang aktif tampil di channel ini!"
+            return False, "⚠️ Kamu sudah berada di dalam antrean atau sedang aktif tampil!"
 
         if not session.current_performer:
             session.current_performer = member
-            session.stage_start_time = datetime.now()  # Catat Waktu Mulai Tampil
             session.skip_votes.clear()
             await self.persist_session(channel_id)
             return True, "🎙️ Kamu langsung naik ke panggung utama di channel ini!"
@@ -181,20 +157,10 @@ class KaraokeCog(commands.Cog, name="Karaoke Santai"):
         session = self.get_session(channel_id)
 
         if session.current_performer and session.current_performer.id == member.id:
-            # Pengecekan Durasi 1 Menit
-            counted = await self._check_and_record_stage_stat(session, member)
-            
             session.current_performer = session.queue.pop(0) if session.queue else None
-            session.stage_start_time = datetime.now() if session.current_performer else None
             session.skip_votes.clear()
             await self.persist_session(channel_id)
-            
-            msg = "🚪 Kamu memilih untuk turun dari panggung."
-            if counted:
-                msg += " *(Penampilan 1+ menit tercatat di KTP!)*"
-            else:
-                msg += " *(Tampil di bawah 1 menit tidak tercatat di KTP)*"
-            return True, msg
+            return True, "🚪 Kamu memilih untuk turun dari panggung."
 
         for m in session.queue:
             if m.id == member.id:
@@ -206,16 +172,9 @@ class KaraokeCog(commands.Cog, name="Karaoke Santai"):
 
     async def finish_performance(self, channel_id: int, member: discord.Member) -> tuple[str, discord.Member]:
         session = self.get_session(channel_id)
-        
-        # Pengecekan Durasi 1 Menit
-        counted = await self._check_and_record_stage_stat(session, member)
         thanks = get_random_thanks(member.mention)
 
-        if not counted:
-            thanks += "\n⚠️ *Catatan: Penampilan di bawah 1 menit tidak dihitung ke statistik KTP.*"
-
         session.current_performer = session.queue.pop(0) if session.queue else None
-        session.stage_start_time = datetime.now() if session.current_performer else None
         session.skip_votes.clear()
         await self.persist_session(channel_id)
         
@@ -232,13 +191,9 @@ class KaraokeCog(commands.Cog, name="Karaoke Santai"):
         if not session.current_performer:
             return False, "⚠️ Sedang tidak ada penyanyi di atas panggung.", False
 
-        # 1. MODERATOR OVERRIDE
         if member.guild_permissions.manage_guild:
             old_performer = session.current_performer
-            await self._check_and_record_stage_stat(session, old_performer)
-
             session.current_performer = session.queue.pop(0) if session.queue else None
-            session.stage_start_time = datetime.now() if session.current_performer else None
             session.skip_votes.clear()
             await self.persist_session(channel_id)
 
@@ -253,7 +208,6 @@ class KaraokeCog(commands.Cog, name="Karaoke Santai"):
         if member.id == session.current_performer.id:
             return False, "⚠️ Kamu adalah penyanyi aktif! Silakan tekan tombol 'Selesai Tampil' untuk turun.", False
 
-        # 2. Hitung threshold ¼ dari warga VC
         vc = session.current_performer.voice.channel if (isinstance(session.current_performer, discord.Member) and session.current_performer.voice and session.current_performer.voice.channel) else None
         required_votes = max(1, math.ceil(len([m for m in vc.members if not m.bot]) * 0.25)) if vc else 1
 
@@ -264,10 +218,7 @@ class KaraokeCog(commands.Cog, name="Karaoke Santai"):
         
         if len(session.skip_votes) >= required_votes:
             old_performer = session.current_performer
-            await self._check_and_record_stage_stat(session, old_performer)
-
             session.current_performer = session.queue.pop(0) if session.queue else None
-            session.stage_start_time = datetime.now() if session.current_performer else None
             session.skip_votes.clear()
             await self.persist_session(channel_id)
 
@@ -288,10 +239,8 @@ class KaraokeCog(commands.Cog, name="Karaoke Santai"):
         if session.current_performer:
             vc = session.current_performer.voice.channel if (isinstance(session.current_performer, discord.Member) and session.current_performer.voice and session.current_performer.voice.channel) else None
             req_votes = max(1, math.ceil(len([m for m in vc.members if not m.bot]) * 0.25)) if vc else 1
-
             vote_status = f"\n\n🗳️ *Vote Skip:* `{len(session.skip_votes)}/{req_votes} vote (¼ VC)`" if session.skip_votes else ""
-            
-            # Tampilan bersih tanpa indikator timer
+
             embed_performer.description = (
                 f"🎶 **Penyanyi Aktif:**\n"
                 f"👉 {session.current_performer.mention}\n\n"
@@ -320,8 +269,6 @@ class KaraokeCog(commands.Cog, name="Karaoke Santai"):
                 await session.active_message.edit(embeds=embeds, view=KaraokeView(self))
             except Exception:
                 pass
-
-    # --- PERINTAH TEKS ---
 
     @commands.command(name="q", aliases=["queue", "karaoke"])
     async def queue_command(self, ctx):
@@ -384,7 +331,6 @@ class KaraokeCog(commands.Cog, name="Karaoke Santai"):
         session.current_performer = None
         session.queue = []
         session.skip_votes.clear()
-        session.stage_start_time = None
         
         await database.clear_karaoke_session_db(channel_id)
         await ctx.send(f"🧹 Antrean karaoke di channel {ctx.channel.mention} berhasil dibersihkan oleh Moderator!")

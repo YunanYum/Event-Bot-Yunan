@@ -6,54 +6,60 @@ from datetime import datetime
 LOG_CHANNEL_ID = int(os.getenv("LOG_CHANNEL_ID", "0"))
 
 async def send_realtime_log(bot, embed: discord.Embed):
-    """Fungsi Helper Global untuk mengirimkan log realtime ke channel log."""
-    if not LOG_CHANNEL_ID:
-        print("[LOGGER WARNING] LOG_CHANNEL_ID belum diisi atau masih bernilai 0 di .env!")
-        return
+    if not LOG_CHANNEL_ID: return
 
     channel = bot.get_channel(LOG_CHANNEL_ID)
     if not channel:
-        try:
-            channel = await bot.fetch_channel(LOG_CHANNEL_ID)
-        except Exception as e:
-            print(f"[LOGGER ERROR] Gagal mengambil channel dengan ID {LOG_CHANNEL_ID}: {e}")
-            return
+        try: channel = await bot.fetch_channel(LOG_CHANNEL_ID)
+        except Exception: return
 
     try:
         await channel.send(embed=embed)
-        print(f"✅ [LOGGER SUCCESS] Log '{embed.title}' berhasil dikirim ke #{channel.name}!")
     except Exception as e:
-        print(f"❌ [LOGGER ERROR] Gagal mengirim log ke #{channel.name}: {e}")
+        print(f"[REALTIME LOGGER ERROR] {e}")
 
 
-class LoggerCog(commands.Cog, name="Sistem Log Realtime Khusus"):
+class LoggerCog(commands.Cog, name="Sistem Log Realtime"):
     def __init__(self, bot):
         self.bot = bot
 
-    # --- LISTENER EVENT REALTIME (KTP, GIVEAWAY, SAJAM, PPKM, DB) ---
-    @commands.Cog.listener("on_realtime_activity")
-    async def on_realtime_activity_listener(self, title: str, description: str, color: discord.Color, user: discord.User = None):
-        embed = discord.Embed(
-            title=title,
-            description=description,
-            color=color,
-            timestamp=datetime.now()
-        )
-        if user:
-            embed.set_author(name=user.display_name, icon_url=user.display_avatar.url)
-        embed.set_footer(text="Log Realtime Resmi • Kelurahan MAHA5")
-        
-        await send_realtime_log(self.bot, embed)
+    @commands.Cog.listener()
+    async def on_interaction(self, interaction: discord.Interaction):
+        if interaction.type != discord.InteractionType.modal_submit: return
 
-    # --- LISTENER COMMAND COMPLETION (SAJAM, PPKM, DB) ---
+        data = interaction.data or {}
+        title = data.get("title", "")
+
+        values = []
+        if "components" in data:
+            for row in data["components"]:
+                for comp in row.get("components", []):
+                    values.append(comp.get("value", "").strip())
+
+        # Log Giveaway
+        if "Buat Giveaway" in title and len(values) >= 4:
+            prize, winners, duration, target_channel = values[0], values[1], values[2], values[3]
+            embed = discord.Embed(
+                title="🎁 EVENT GIVEAWAY DIMULAI",
+                description=(
+                    f"> **Penyelenggara:** {interaction.user.mention}\n"
+                    f"> **Hadiah:** `{prize}`\n"
+                    f"> **Jumlah Pemenang:** `{winners}` orang\n"
+                    f"> **Durasi:** `{duration}`\n"
+                    f"> **Channel Target:** `{target_channel}`"
+                ),
+                color=discord.Color.gold(),
+                timestamp=datetime.now()
+            )
+            embed.set_author(name=interaction.user.display_name, icon_url=interaction.user.display_avatar.url)
+            embed.set_footer(text="Log Realtime Resmi • Event Bot Yunan")
+            await send_realtime_log(self.bot, embed)
+
     @commands.Cog.listener()
     async def on_command_completion(self, ctx):
-        if ctx.author.bot:
-            return
-
+        if ctx.author.bot: return
         cmd_name = ctx.command.qualified_name if ctx.command else ""
 
-        # 1. EVENT: Mulai Sajam (!!sajam start)
         if cmd_name == "sajam start":
             vc = ctx.author.voice.channel if ctx.author.voice else None
             vc_mention = vc.mention if vc else "Voice Channel"
@@ -64,10 +70,9 @@ class LoggerCog(commands.Cog, name="Sistem Log Realtime Khusus"):
                 timestamp=datetime.now()
             )
             embed.set_author(name=ctx.author.display_name, icon_url=ctx.author.display_avatar.url)
-            embed.set_footer(text="Log Realtime Resmi • Kelurahan MAHA5")
+            embed.set_footer(text="Log Realtime Resmi • Event Bot Yunan")
             await send_realtime_log(self.bot, embed)
 
-        # 2. EVENT: Selesai Sajam (!!sajam end)
         elif cmd_name == "sajam end":
             embed = discord.Embed(
                 title="🏁 SESI SAJAM SELESAI",
@@ -76,10 +81,9 @@ class LoggerCog(commands.Cog, name="Sistem Log Realtime Khusus"):
                 timestamp=datetime.now()
             )
             embed.set_author(name=ctx.author.display_name, icon_url=ctx.author.display_avatar.url)
-            embed.set_footer(text="Log Realtime Resmi • Kelurahan MAHA5")
+            embed.set_footer(text="Log Realtime Resmi • Event Bot Yunan")
             await send_realtime_log(self.bot, embed)
 
-        # 3. EVENT: Memulai PPKM (!!ppkm)
         elif cmd_name == "ppkm":
             winners_count = ctx.kwargs.get("winners_count") or (ctx.args[1] if len(ctx.args) > 1 else "N/A")
             duration = ctx.kwargs.get("duration") or (ctx.args[2] if len(ctx.args) > 2 else "N/A")
@@ -97,10 +101,9 @@ class LoggerCog(commands.Cog, name="Sistem Log Realtime Khusus"):
                 timestamp=datetime.now()
             )
             embed.set_author(name=ctx.author.display_name, icon_url=ctx.author.display_avatar.url)
-            embed.set_footer(text="Log Realtime Resmi • Kelurahan MAHA5")
+            embed.set_footer(text="Log Realtime Resmi • Event Bot Yunan")
             await send_realtime_log(self.bot, embed)
 
-        # 4. EVENT: Backup Database (!!db backup)
         elif cmd_name == "db backup":
             embed = discord.Embed(
                 title="💾 BACKUP DATABASE MANUAL",
@@ -109,10 +112,9 @@ class LoggerCog(commands.Cog, name="Sistem Log Realtime Khusus"):
                 timestamp=datetime.now()
             )
             embed.set_author(name=ctx.author.display_name, icon_url=ctx.author.display_avatar.url)
-            embed.set_footer(text="Log Realtime Resmi • Kelurahan MAHA5")
+            embed.set_footer(text="Log Realtime Resmi • Event Bot Yunan")
             await send_realtime_log(self.bot, embed)
 
-        # 5. EVENT: Restore Database (!!db restore)
         elif cmd_name == "db restore":
             filename = ctx.kwargs.get("filename") or (ctx.args[1] if len(ctx.args) > 1 else "Unspecified")
             embed = discord.Embed(
@@ -122,7 +124,7 @@ class LoggerCog(commands.Cog, name="Sistem Log Realtime Khusus"):
                 timestamp=datetime.now()
             )
             embed.set_author(name=ctx.author.display_name, icon_url=ctx.author.display_avatar.url)
-            embed.set_footer(text="Log Realtime Resmi • Kelurahan MAHA5")
+            embed.set_footer(text="Log Realtime Resmi • Event Bot Yunan")
             await send_realtime_log(self.bot, embed)
 
 

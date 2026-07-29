@@ -41,7 +41,6 @@ class GiveawayJoinButton(discord.ui.Button):
                 return
 
             await database.add_giveaway_participant(self.message_id, member.id)
-            await database.increment_event_stat(member.id, 'giveaway')
 
             try:
                 new_participants = await database.get_giveaway_participants(self.message_id)
