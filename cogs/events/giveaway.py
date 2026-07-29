@@ -1,6 +1,7 @@
 import os
 import discord
 from discord.ext import commands
+from discord import app_commands
 import asyncio
 import random
 import re
@@ -8,13 +9,17 @@ from datetime import datetime, timedelta
 from typing import Optional, Tuple
 from core.database import database
 
-def is_mod_or_admin(ctx):
-    return ctx.author.guild_permissions.manage_guild
+def is_mod_or_admin(ctx_or_interaction) -> bool:
+    if isinstance(ctx_or_interaction, discord.Interaction):
+        return ctx_or_interaction.user.guild_permissions.manage_guild
+    elif hasattr(ctx_or_interaction, 'author'):
+        return ctx_or_interaction.author.guild_permissions.manage_guild
+    return False
 
 def parse_duration(duration: str) -> int:
     match = re.match(r"(\d+)([smhd])", duration.lower())
     if not match:
-        raise ValueError("Format waktunya salah. Pakai 's', 'm', 'h', atau 'd'.")
+        raise ValueError("Format waktunya salah. Pakai 's', 'm', 'h', atau 'd'. (Contoh: 15s, 10m, 2h)")
     value, unit = match.groups()
     value = int(value)
     if unit == "s": return value
@@ -24,7 +29,6 @@ def parse_duration(duration: str) -> int:
     raise ValueError("Unit waktu salah.")
 
 def parse_role_filters(raw_text: str) -> Tuple[Optional[int], Optional[int]]:
-    """Helper untuk mem-parse input Whitelist dan Blacklist Role."""
     if not raw_text:
         return None, None
 
@@ -45,6 +49,15 @@ def parse_role_filters(raw_text: str) -> Tuple[Optional[int], Optional[int]]:
 
     return whitelist_id, blacklist_id
 
+def format_sponsor_display(sponsor_raw: Optional[str]) -> Optional[str]:
+    """Helper untuk memformat sponsor murni ID menjadi mention."""
+    if not sponsor_raw:
+        return None
+    cleaned = sponsor_raw.strip()
+    if cleaned.isdigit():
+        return f"<@{cleaned}>"
+    return cleaned
+
 
 class GiveawayJoinButton(discord.ui.Button):
     def __init__(self, message_id: int, whitelist_role_id: Optional[int] = None, blacklist_role_id: Optional[int] = None):
@@ -61,18 +74,16 @@ class GiveawayJoinButton(discord.ui.Button):
 
         user_role_ids = {role.id for role in member.roles}
 
-        # 1. VALIDAASI ROLE BLACKLIST
         if self.blacklist_role_id and self.blacklist_role_id in user_role_ids:
             await interaction.response.send_message(
-                f"❌ Maaf, pemilik peran <@&{self.blacklist_role_id}> dilarang mengikuti giveaway ini!",
+                f"❌ Maaf, pemilik Role <@&{self.blacklist_role_id}> dilarang mengikuti giveaway ini!",
                 ephemeral=True
             )
             return
 
-        # 2. VALIDASI ROLE WHITELIST
         if self.whitelist_role_id and self.whitelist_role_id not in user_role_ids:
             await interaction.response.send_message(
-                f"❌ Maaf, giveaway ini khusus bagi pemilik peran <@&{self.whitelist_role_id}>!",
+                f"❌ Maaf, giveaway ini khusus bagi pemilik Role <@&{self.whitelist_role_id}>!",
                 ephemeral=True
             )
             return
@@ -145,10 +156,7 @@ class GiveawaySetupModal(discord.ui.Modal, title="Buat Giveaway Baru"):
             await interaction.response.send_message(f"❌ {str(e)}", ephemeral=True)
             return
 
-        # PARSE ROLE WHITELIST & BLACKLIST
         whitelist_role_id, blacklist_role_id = parse_role_filters(role_filter_raw)
-
-        # CHANNEL TARGET OTOMATIS CHANNEL SAAT INI
         target_channel = interaction.channel
 
         await interaction.response.send_message(f"✅ Giveaway diproses ke {target_channel.mention}!", ephemeral=True)
@@ -168,7 +176,7 @@ class GiveawaySetupView(discord.ui.View):
 
     @discord.ui.button(label="Buat Giveaway 🎁", style=discord.ButtonStyle.primary)
     async def open_modal(self, interaction: discord.Interaction, button: discord.ui.Button):
-        if not interaction.user.guild_permissions.manage_guild:
+        if not is_mod_or_admin(interaction):
             await interaction.response.send_message("❌ Hanya staf/admin yang diperbolehkan membuat giveaway!", ephemeral=True)
             return
         await interaction.response.send_modal(GiveawaySetupModal(self.cog))
@@ -223,6 +231,7 @@ class GiveawayCog(commands.Cog):
         if active_gws:
             print(f"📡 [Giveaway Persistence] Memulihkan {len(active_gws)} event giveaway aktif.")
 
+    # --- PREFIX COMMAND (!!giveaway) ---
     @commands.command(name="giveaway")
     @commands.check(is_mod_or_admin)
     async def setup_giveaway(self, ctx):
@@ -232,6 +241,53 @@ class GiveawayCog(commands.Cog):
             color=discord.Color.from_rgb(224, 170, 170)
         )
         await ctx.send(embed=embed, view=GiveawaySetupView(self))
+
+    # --- SLASH COMMAND (/giveaway) ---
+    @app_commands.command(name="giveaway", description="Membuat event giveaway baru secara instan.")
+    @app_commands.describe(
+        hadiah="Nama/Deskripsi hadiah giveaway",
+        pemenang="Jumlah pemenang (misal: 1 atau 2)",
+        durasi="Durasi waktu giveaway (misal: 15s, 10m, 2h)",
+        channel="Channel tempat giveaway dikirim (opsional, default: channel saat ini)",
+        sponsor="Sponsor / Dari siapa giveaway ini (opsional, mention atau teks)",
+        filter_role="Filter role: @Role (Whitelist) atau !@Role (Blacklist) (opsional)"
+    )
+    async def giveaway_slash(
+        self,
+        interaction: discord.Interaction,
+        hadiah: str,
+        pemenang: int,
+        durasi: str,
+        channel: Optional[discord.TextChannel] = None,
+        sponsor: Optional[str] = None,
+        filter_role: Optional[str] = None
+    ):
+        if not is_mod_or_admin(interaction):
+            await interaction.response.send_message("❌ Hanya staf/admin yang diperbolehkan membuat giveaway!", ephemeral=True)
+            return
+
+        if pemenang <= 0:
+            await interaction.response.send_message("❌ Jumlah pemenang harus lebih dari 0!", ephemeral=True)
+            return
+
+        try:
+            duration_seconds = parse_duration(durasi)
+        except ValueError as e:
+            await interaction.response.send_message(f"❌ {str(e)}", ephemeral=True)
+            return
+
+        whitelist_role_id, blacklist_role_id = parse_role_filters(filter_role or "")
+        target_channel = channel or interaction.channel
+
+        await interaction.response.send_message(f"✅ Giveaway diproses ke {target_channel.mention}!", ephemeral=True)
+
+        self.bot.loop.create_task(
+            self.run_giveaway(
+                target_channel, hadiah, pemenang, duration_seconds,
+                sponsor=sponsor, host_user=interaction.user,
+                whitelist_role_id=whitelist_role_id, blacklist_role_id=blacklist_role_id
+            )
+        )
 
     async def run_giveaway(
         self, target_channel: discord.TextChannel, prize: str, winners_count: int, 
@@ -249,8 +305,10 @@ class GiveawayCog(commands.Cog):
         embed.add_field(name="🏆 Pemenang", value=f"**{winners_count}** orang", inline=True)
         embed.add_field(name="👥 Total Peserta", value="**0** orang", inline=True)
 
-        if sponsor:
-            embed.add_field(name="👑 Sponsor / Dari", value=f"**{sponsor}**", inline=False)
+        # SPONSOR DISPLAY (Auto-Format ID menjadi Mention jika berupa angka murni)
+        sponsor_formatted = format_sponsor_display(sponsor)
+        if sponsor_formatted:
+            embed.add_field(name="👑 Sponsor / Dari", value=f"**{sponsor_formatted}**", inline=False)
 
         if whitelist_role_id:
             embed.add_field(name="🔒 Khusus Peran (Whitelist)", value=f"<@&{whitelist_role_id}>", inline=True)
@@ -263,7 +321,6 @@ class GiveawayCog(commands.Cog):
         placeholder_view = discord.ui.View(timeout=None)
         giveaway_msg = await target_channel.send(embed=embed, view=placeholder_view)
 
-        # SIMPAN KE DATABASE TERMASUK FILTER ROLE
         await database.save_giveaway(
             giveaway_msg.id, target_channel.id, prize, winners_count, 
             end_time.isoformat(), whitelist_role_id=whitelist_role_id, blacklist_role_id=blacklist_role_id
@@ -275,7 +332,7 @@ class GiveawayCog(commands.Cog):
         await giveaway_msg.edit(view=view)
 
         # LOG REALTIME LOG_CHANNEL (#bot-log)
-        sponsor_log = f"\n> **Sponsor / Dari:** `{sponsor}`" if sponsor else ""
+        sponsor_log = f"\n> **Sponsor / Dari:** `{sponsor_formatted}`" if sponsor_formatted else ""
         whitelist_log = f"\n> **Whitelist Role:** <@&{whitelist_role_id}>" if whitelist_role_id else ""
         blacklist_log = f"\n> **Blacklist Role:** <@&{blacklist_role_id}>" if blacklist_role_id else ""
 

@@ -34,6 +34,12 @@ async def on_ready():
     if not hasattr(bot, 'start_time'):
         from datetime import datetime
         bot.start_time = datetime.now()
+
+    try:
+        synced = await bot.tree.sync()
+        print(f"✨ Berhasil mensinkronkan {len(synced)} Slash Commands!")
+    except Exception as e:
+        print(f"❌ Gagal sinkronisasi slash commands: {e}")
         
     change_status.start()
     print(f'=== BOT TELAH ONLINE ===')
