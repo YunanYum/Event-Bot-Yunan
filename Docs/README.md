@@ -1,6 +1,6 @@
 # 🤖 Event Bot Yunan - MAHA5 Helper Bot
 
-Bot Discord multifungsi dan interaktif yang dirancang khusus untuk mengelola event komunitas, gacha slot panggung event, panggung live (Sajam), antrean karaoke santai multi-room, event giveaway, monitoring hosting, serta logging realtime.
+Bot Discord multifungsi dan interaktif yang dirancang khusus untuk mengelola event komunitas, gacha slot panggung event, panggung live (Sajam), antrean karaoke santai multi-room, event giveaway ber-filter, monitoring hosting, serta logging realtime.
 
 ============================================================================
 
@@ -11,9 +11,9 @@ Bot Discord multifungsi dan interaktif yang dirancang khusus untuk mengelola eve
 | **🎲 Gacha Interaktif PPKM** | Pendaftaran gacha slot panggung menggunakan Tombol (Buttons) dengan *live-counter* peserta real-time, penyaringan Voice Channel, serta fitur Reroll. |
 | **🎙️ Panggung Live Sajam** | Sistem panggung jamming/nyanyi resmi terintegrasi dengan pemantauan pengunjung VC dan rekapitulasi statistik lengkap saat sesi diakhiri. |
 | **🎤 Karaoke Santai Multi-Room** | Antrean karaoke harian mandiri tanpa butuh moderator (`!!q`). Dilengkapi panel ganda, vote skip dinamis (¼ warga VC), dan override lengser dari Mod. |
-| **🎁 Event Giveaway** | Pembuat event pembagian hadiah interaktif berbasis formulir Popup Modal dengan timer otomatis dan ketahanan data (*persistence*). |
+| **🎁 Event Giveaway Filtered** | Pembuat event pembagian hadiah berbasis Popup Modal. Mendukung Sponsor (Opsional) & Filter Role Whitelist (`@Role`) / Blacklist (`!@Role`) temporer. |
 | **🖥️ Monitoring System & Hosting** | Perintah `!!bot` khusus staf/dev untuk memantau performa CPU, RAM Hosting, RAM Bot, Disk, Latency Ping, dan kesehatan SQLite. |
-| **📜 Realtime Audit Logger** | Pencatatan otomatis secara realtime ke channel log (`#bot-log`) untuk 6 peristiwa penting (KTP, Sajam, PPKM, Giveaway, Backup DB). |
+| **📜 Realtime Audit Logger** | Pencatatan otomatis secara realtime ke channel log (`#bot-log`) untuk 6 peristiwa penting (Sajam, PPKM, Giveaway, Backup DB). |
 | **📖 Role-Based Help System** | Perintah `!!help` secara otomatis menyembunyikan bab-bab khusus Moderator (Filter & Database Admin) dari member biasa. |
 | **💾 SQLite WAL & Backup System** | Mode *Write-Ahead Logging* (WAL) untuk performa cepat tanpa *database locking*, serta manajemen backup DB langsung dari chat (`!!db`). |
 
@@ -87,15 +87,16 @@ python main.py
 🎲 4. Event Gacha PPKM & Giveaway (Khusus Mod/Admin)
 
   - !!ppkm [jumlah_slot] [durasi] [channel_target] ➔ Memulai gacha slot PPKM
-    dengan tombol pendaftaran interaktif dan counter peserta real-time. Contoh:
-    !!ppkm 3 25s #event-voice
+    dengan tombol pendaftaran interaktif dan counter peserta real-time.
   - !!reroll ➔ Mengundi ulang seluruh pemenang gacha terakhir.
   - !!reroll @NamaMember ➔ Mengundi ulang pemenang tertentu saja (mencoret
     pemenang lama dan mencarikan penggantinya).
   - !!ppkmconfig ➔ Membuka panel interaktif untuk mengelola role
     blacklist/whitelist & user blacklist.
-  - !!giveaway ➔ Membuka panel pembuat giveaway. Klik tombol "Buat Giveaway 🎁"
-    untuk mengisi formulir Modal Popup.
+  - !!giveaway ➔ Membuka panel pembuat giveaway berbasis Modal Popup.
+      - Sponsor / Dari Siapa: Opsional (Akan ditampilkan di Embed jika diisi).
+      - Filter Role: Tulis @Role untuk Whitelist atau !@Role untuk Blacklist
+        (Temporer per-giveaway).
 
 💾 5. Manajemen Backup Database (Khusus Mod/Admin)
 
@@ -111,24 +112,76 @@ python main.py
 
 ❓ FAQ (Frequently Asked Questions)
 
-1.  Kok bot-nya ga ngerespon sama sekali pas aku ketik perintah?
+🎙️ Panggung & Karaoke
 
-      - Salah Channel: Pastikan Anda mengetik perintah di salah satu channel
-        yang ID-nya tercantum di .env (ALLOWED_CHANNELS) atau di dalam Text Chat
-        Voice Channel.
-      - Izin Kurang: Perintah admin/mod memerlukan izin sistem Discord bernama
-        "Manage Server" (Kelola Server).
-      - Bot Offline: Periksa terminal/CMD Anda, pastikan proses python main.py
-        masih berjalan.
+    Apakah Karaoke Santai bisa digunakan di banyak channel sekaligus?
 
-2.  Apakah antrean Karaoke atau Giveaway hilang jika bot dimatikan?
+        BISA! Sistem Karaoke menggunakan arsitektur Multi-Room. Antrean dan penyanyi aktif di setiap channel/room terisolasi secara mandiri dan tidak akan bertabrakan.
 
-      - TIDAK! Sistem dilengkapi SQLite Persistence. Antrean Karaoke, penyanyi
-        aktif, dan timer Giveaway akan otomatis dipulihkan persis seperti posisi
-        terakhir saat bot dinyalakan kembali.
+    Gimana cara menurunkan penyanyi Karaoke yang AFK atau tidak mau turun?
 
-3.  Bagaimana cara kerja sistem Realtime Logging (#bot-log)?
+        Member lain bisa menekan tombol ⏩ LENGSERKAN DIA atau mengetik !!qskip. Jika jumlah vote mencapai ¼ dari total warga di VC, penyanyi akan otomatis diturunkan.
 
-      - Bot secara otomatis mencatat 6 peristiwa penting ke channel #bot-log:
-        Pendaftaran KTP, Mulai/Selesai Sajam, Memulai PPKM, Memulai Giveaway,
-        serta Backup/Restore Database.
+        Moderator yang menekan tombol tersebut dapat langsung melengserkan penyanyi secara instan (override).
+
+    Apa perbedaan antara Sesi Sajam dan Karaoke Santai?
+
+        Karaoke Santai (!!q): Bersifat mandiri/harian tanpa perlu dijaga Host/Mod.
+
+        Sajam Resmi (!!sajam): Sesi panggung resmi yang dipandu Host/Mod (!!sajam start), dilengkapi pemantauan pengunjung VC realtime dan laporan rekapitulasi statistik panggung lengkap saat diakhiri (!!sajam end).
+
+🎲 Event PPKM & Giveaway
+
+    Bagaimana cara membuat Giveaway khusus Role tertentu (Whitelist/Blacklist)?
+
+        Jalankan !!giveaway, klik Buat Giveaway 🎁. Di kolom ke-5 (Filter Role), tulis @Role untuk Whitelist (hanya role tersebut yang bisa ikut) atau !@Role untuk Blacklist (role tersebut dilarang ikut).
+
+        Filter ini bersifat temporer per-giveaway, sehingga pembuatan giveaway berikutnya otomatis kembali tanpa filter.
+
+    Apa yang terjadi jika kolom Channel Target dikosongkan saat membuat Giveaway?
+
+        Bot akan otomatis mengirimkan pesan Giveaway ke channel tempat perintah !!giveaway dipanggil.
+
+    Bagaimana jika pemenang Gacha PPKM berhalangan hadir atau tidak ada di VC?
+
+        Moderator dapat mengetik !!reroll untuk mengundi ulang seluruh pemenang, atau !!reroll @NamaMember untuk mengganti pemenang tertentu saja.
+
+    Bagaimana cara membatasi siapa saja yang boleh ikut Gacha PPKM?
+
+        Ketik !!ppkmconfig untuk membuka panel interaktif kelola Whitelist/Blacklist Role dan User.
+
+💾 Database, Hosting & System
+
+    Apakah antrean Karaoke atau Giveaway hilang jika bot restart?
+
+        TIDAK! Sistem dilengkapi SQLite Persistence. Antrean Karaoke, penyanyi aktif, dan timer Giveaway akan otomatis dipulihkan persis seperti posisi terakhir saat bot dinyalakan kembali.
+
+    Mengapa di folder data/ ada file event_bot.db-wal dan event_bot.db-shm?
+
+        Itu adalah file bawaan dari mode SQLite WAL (Write-Ahead Logging). Mode ini aktif untuk memastikan proses read/write database berlangsung super cepat tanpa mengalami error database is locked. Ini 100% normal.
+
+    Bagaimana cara memantau kondisi CPU, RAM, dan Hosting tempat bot berjalan?
+
+        Moderator/Dev dapat mengetik !!bot (atau !!botstatus) untuk melihat laporan realtime penggunaan CPU, RAM, Disk, Latency Ping, dan kesehatan database.
+
+    Bagaimana cara kerja sistem Realtime Logging (#bot-log)?
+
+        Bot secara otomatis mencatat 5 peristiwa penting ke channel #bot-log: Mulai/Selesai Sajam, Memulai PPKM, Memulai Giveaway, serta Backup/Restore Database.
+
+    Bagaimana cara memulihkan database jika terjadi kesalahan data?
+
+        Moderator dapat mengetik !!db list untuk melihat daftar file cadangan, lalu jalankan !!db restore [nama_file.db]. Sistem dilengkapi tombol konfirmasi keselamatan sebelum menimpa data.
+
+🔧 Troubleshooting
+
+    Kok bot tidak merespon sama sekali saat diketik perintah?
+
+        Salah Channel: Pastikan Anda mengetik perintah di channel yang ID-nya terdaftar pada .env (ALLOWED_CHANNELS) atau di dalam Text Chat Voice Channel.
+
+        Izin Kurang: Perintah admin/mod memerlukan izin Discord bernama "Manage Server" (Kelola Server).
+
+        Bot Offline: Periksa terminal VS Code / hosting Anda, pastikan skrip python main.py berjalan tanpa error.
+
+    Bagaimana jika saya mengubah ID channel/role pada file .env?
+
+        Setiap kali Anda mengubah isi file .env, Anda wajib melakukan restart bot (Ctrl + C lalu jalankan kembali python main.py) agar variabel baru terbaca oleh Python.

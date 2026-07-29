@@ -109,7 +109,8 @@ class HelpDropdown(discord.ui.Select):
                         value=(
                             f"> `{prefix}ppkm [slot] [durasi] [channel]` ➔ Buat undian slot event.\n"
                             f"> `{prefix}reroll` ➔ Kocok ulang pemenang gacha PPKM.\n"
-                            f"> `{prefix}giveaway` ➔ Buka form popup pembuat Giveaway."
+                            f"> `{prefix}giveaway` ➔ Buka form popup pembuat Giveaway.\n"
+                            "└ *Form Modal mendukung Sponsor (Opsional) & Filter Role Whitelist (`@Role`) / Blacklist (`!@Role`) temporer.*"
                         ),
                         inline=False
                     )

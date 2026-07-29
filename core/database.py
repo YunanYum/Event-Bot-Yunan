@@ -77,9 +77,16 @@ class SQLiteDatabase:
                     prize TEXT NOT NULL,
                     winners_count INTEGER NOT NULL,
                     end_time TEXT NOT NULL,
-                    is_active INTEGER DEFAULT 1
+                    is_active INTEGER DEFAULT 1,
+                    whitelist_role_id INTEGER DEFAULT NULL,
+                    blacklist_role_id INTEGER DEFAULT NULL
                 )
             """)
+            try: cursor.execute("ALTER TABLE giveaways ADD COLUMN whitelist_role_id INTEGER DEFAULT NULL")
+            except Exception: pass
+            try: cursor.execute("ALTER TABLE giveaways ADD COLUMN blacklist_role_id INTEGER DEFAULT NULL")
+            except Exception: pass
+
             cursor.execute("""
                 CREATE TABLE IF NOT EXISTS giveaway_participants (
                     message_id INTEGER,
@@ -261,14 +268,14 @@ class SQLiteDatabase:
         return await asyncio.to_thread(_op)
 
     # --- METODE GIVEAWAY PERSISTENCE ---
-    async def save_giveaway(self, message_id, channel_id, prize, winners_count, end_time_iso):
+    async def save_giveaway(self, message_id, channel_id, prize, winners_count, end_time_iso, whitelist_role_id=None, blacklist_role_id=None):
         def _op():
             with self._get_connection() as conn:
                 cursor = conn.cursor()
                 cursor.execute("""
-                    INSERT INTO giveaways (message_id, channel_id, prize, winners_count, end_time, is_active)
-                    VALUES (?, ?, ?, ?, ?, 1)
-                """, (message_id, channel_id, prize, winners_count, end_time_iso))
+                    INSERT INTO giveaways (message_id, channel_id, prize, winners_count, end_time, is_active, whitelist_role_id, blacklist_role_id)
+                    VALUES (?, ?, ?, ?, ?, 1, ?, ?)
+                """, (message_id, channel_id, prize, winners_count, end_time_iso, whitelist_role_id, blacklist_role_id))
                 conn.commit()
         await asyncio.to_thread(_op)
 
@@ -292,7 +299,7 @@ class SQLiteDatabase:
         def _op():
             with self._get_connection() as conn:
                 cursor = conn.cursor()
-                cursor.execute("SELECT message_id, channel_id, prize, winners_count, end_time FROM giveaways WHERE is_active = 1")
+                cursor.execute("SELECT message_id, channel_id, prize, winners_count, end_time, whitelist_role_id, blacklist_role_id FROM giveaways WHERE is_active = 1")
                 return cursor.fetchall()
         return await asyncio.to_thread(_op)
 

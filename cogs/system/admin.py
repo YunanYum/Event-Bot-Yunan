@@ -48,7 +48,7 @@ class AdminCog(commands.Cog, name="Sistem Admin & Monitoring"):
     # --- PERINTAH MONITORING BOT & HOSTING ---
     @commands.command(name="bot", aliases=["botstatus", "stats", "system", "host"])
     @commands.check(is_mod_or_admin)
-    async def bot_status_command(self, ctx):
+    async def status_command(self, ctx):
         """Menampilkan status lengkap performa bot dan sistem hosting (Khusus Dev/Mod)."""
         async with ctx.typing():
             # 1. Kalkulasi Uptime
