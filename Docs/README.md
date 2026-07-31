@@ -1,6 +1,6 @@
 # 🤖 Event Bot Yunan - MAHA5 Helper Bot
 
-Bot Discord multifungsi dan interaktif yang dirancang khusus untuk mengelola event komunitas, gacha slot panggung event, panggung live (Sajam), antrean karaoke santai multi-room, event giveaway ber-filter, monitoring hosting, serta logging realtime.
+Bot Discord multifungsi dan interaktif yang dirancang khusus untuk komunitas MAHA5. Dilengkapi dengan sistem KTP Digital, bursa kerja puzzle realtime, simulasi ekonomi makro realistis, panggung musik live (Sajam & Karaoke), gacha slot event, event giveaway ber-filter, monitoring hosting, serta logging realtime.
 
 ============================================================================
 
@@ -8,13 +8,18 @@ Bot Discord multifungsi dan interaktif yang dirancang khusus untuk mengelola eve
 
 | Fitur | Deskripsi |
 | :--- | :--- |
-| **🎲 Gacha Interaktif PPKM** | Pendaftaran gacha slot panggung menggunakan Tombol (Buttons) dengan *live-counter* peserta real-time, penyaringan Voice Channel, serta fitur Reroll. |
+| **🪪 KTP Digital & Kartu Panggung** | Kartu identitas warga MAHA5 2 halaman interaktif (NIM Berurutan `M5-0000-0001`, Username, Nama, Gender, Status, Fans, dan Riwayat Event) dengan pencarian via NIM Unik (`!!ktp M5-0000-0001`) dan pendaftaran Pak Lurah (`!!lurah`). |
+| **🧩 Bursa Kerja Puzzle Realtime** | 5 Mini-game puzzle pekerjaan khas Indonesia (`!!job`) dalam single-panel UI, 5 Energi/Shift harian, KTP guard, dan hukum gaji dinamis *Demand & Supply*. |
+| **📊 Ekonomi Makro Realistis** | Indeks inflasi dinamis (`!!ekonomi`), penyesuaian harga toko otomatis, pajak Sultan progresif (> Rp 10 Juta), transfer saldo (`!!pay`), dan gaji pasif Voice Channel senyap (VC Mining). |
+| **🏪 Toko Kelurahan MAHA5** | Toko kosmetik Title berjenjang (4 Tier) & item konsumsi **☕ Kopi Suplemen Energi** (+5 Shift Kerja) dengan harga terpengaruh inflasi pasar. |
+| **📜 Misi & Unlock Title** | Title KTP dibuka (*unlocked*) otomatis dari Misi keaktifan event & Fans. Tampilan `!!misi` dilengkapi navigasi halaman `◀️` `▶️`. |
+| **🎤 Karaoke Santai Multi-Room** | Antrean karaoke harian multi-room (`!!q`), vote skip dinamis (¼ warga VC), dan proteksi minimal 1 menit panggung untuk pencatatan statistik KTP. |
 | **🎙️ Panggung Live Sajam** | Sistem panggung jamming/nyanyi resmi terintegrasi dengan pemantauan pengunjung VC dan rekapitulasi statistik lengkap saat sesi diakhiri. |
-| **🎤 Karaoke Santai Multi-Room** | Antrean karaoke harian mandiri tanpa butuh moderator (`!!q`). Dilengkapi panel ganda, vote skip dinamis (¼ warga VC), dan override lengser dari Mod. |
-| **🎁 Event Giveaway Filtered** | Pembuat event pembagian hadiah berbasis Popup Modal. Mendukung Sponsor (Opsional) & Filter Role Whitelist (`@Role`) / Blacklist (`!@Role`) temporer. |
+| **🎁 Event Giveaway Filtered** | Pembuat event pembagian hadiah via Modal Popup atau **Slash Command `/giveaway`**. Mendukung Sponsor (Opsional) & Filter Role Whitelist (`@Role`) / Blacklist (`!@Role`) temporer. |
+| **🎲 Gacha Interaktif PPKM** | Pendaftaran gacha slot panggung menggunakan Tombol (Buttons) dengan *live-counter* peserta real-time, penyaringan Voice Channel, serta fitur Reroll. |
 | **🖥️ Monitoring System & Hosting** | Perintah `!!bot` khusus staf/dev untuk memantau performa CPU, RAM Hosting, RAM Bot, Disk, Latency Ping, dan kesehatan SQLite. |
-| **📜 Realtime Audit Logger** | Pencatatan otomatis secara realtime ke channel log (`#bot-log`) untuk 6 peristiwa penting (Sajam, PPKM, Giveaway, Backup DB). |
-| **📖 Role-Based Help System** | Perintah `!!help` secara otomatis menyembunyikan bab-bab khusus Moderator (Filter & Database Admin) dari member biasa. |
+| **📜 Realtime Audit Logger** | Pencatatan otomatis secara realtime ke channel log (`#bot-log`) untuk 6 peristiwa penting (KTP, Sajam, PPKM, Giveaway, Backup DB). |
+| **📖 Adaptive Help Book** | Buku saku warga interaktif 7 Bab (`!!help`) dengan tampilan adaptif berdasarkan hak akses (Warga vs Staf/Mod). |
 | **💾 SQLite WAL & Backup System** | Mode *Write-Ahead Logging* (WAL) untuk performa cepat tanpa *database locking*, serta manajemen backup DB langsung dari chat (`!!db`). |
 
 ============================================================================
@@ -51,137 +56,127 @@ EXCLUDED_ROLE_ID=1234567890123456789
 
 python main.py
 
+============================================================================
+
 📖 Panduan Perintah Bot
+
+⚠️ Catatan Penting: Semua perintah pendapatan (!!harian, !!job, !!pay, VC
+Mining) membutuhkan KTP resmi. Member wajib mendaftar KTP via !!lurah terlebih
+dahulu!
 
 📖 1. Bantuan Umum & Status Hosting
 
-  - !!help ➔ Membuka Buku Panduan interaktif ber-dropdown. Menampilkan bab yang
-    disesuaikan dengan hak akses penggunanya (Mod/Member).
+  - !!help ➔ Membuka Buku Saku Warga interaktif 7 Bab ber-dropdown.
   - !!bot (Atau !!botstatus, !!stats - Khusus Mod/Dev) ➔ Menampilkan status
     realtime performa bot dan sistem hosting (Ping, Uptime, CPU, RAM, Disk, DB
     Size).
+  - !!sync (Khusus Mod/Dev) ➔ Memaksa Discord mensinkronkan Slash Commands
+    (/giveaway) secara instan di server.
 
-🎤 2. Karaoke Santai Mandiri (Untuk Semua Member)
+🪪 2. KTP Digital, Pak Lurah & Sistem Fans
+
+  - !!lurah ➔ Mendatangi Pak Lurah untuk mendaftar/ merevisi KTP (Nama, Gender,
+    Status) via formulir Popup Modal.
+  - !!ktp (Atau !!ktp @member / !!ktp M5-0000-0001) ➔ Menampilkan KTP Digital 2
+    Halaman milik sendiri, member lain, atau via NIM Unik.
+      - ▶️ ➔ Pindah ke Kartu Tanda Panggung.
+      - ⚙️ (Halaman 2) ➔ Memasang Title & Oshi VTuber MAHA5 secara realtime.
+  - !!simp @member (Atau !!fans @member) ➔ Berikan apresiasi +1 Fans kepada
+    member favoritmu.
+
+🧩 3. Bursa Kerja Puzzle Realtime
+
+  - !!job (Atau !!pekerjaan, !!kerja) ➔ Membuka Pusat Kerja Puzzle Interaktif
+    dalam 1 Panel Pesan.
+      - Energi Kerja: 5 Shift / 24 Jam (Dapat diisi ulang menggunakan Kopi
+        Suplemen Energi di !!toko).
+      - Pilihan Game Puzzle: 🛵 Driver Ojol, 🍳 Koki Warteg, 🅿️ Tukang Parkir, 💵
+        Kasir Merch, ☕ Barista Kopi.
+      - Gaji Dinamis: Pekerjaan yang sering di-spam gajinya turun (-20%),
+        pekerjaan langka dapat bonus (+30%)!
+
+📊 4. Ekonomi Makro, Bank & Toko Kelurahan
+
+  - !!ekonomi (Atau !!bank, !!inflasi) ➔ Menampilkan Dashboard Kesehatan Ekonomi
+    (Status Inflasi/Resesi, Indeks Harga Toko, Total Uang Beredar).
+  - !!harian (Atau !!daily, !!gaji) ➔ Mengklaim bantuan gaji harian (Rp 30k
+    - 75k). Dikenakan Pajak Sultan Progresif 10% jika saldo > Rp 10 Juta.
+  - !!saldo (Atau !!dompet, !!bal) ➔ Cek total saldo Rupiah milik sendiri atau
+    member lain.
+  - !!pay @member [jumlah] (Atau !!tip, !!tf) ➔ Mentransfer / memberi uang tip
+    Rupiah ke warga lain.
+  - !!toko (Atau !!shop, !!beli) ➔ Membuka Toko Kelurahan (Title Kosmetik MAHA5
+    & ☕ Kopi Suplemen Energi) dengan harga terpengaruh inflasi pasar.
+
+📜 5. Misi & Title Pencapaian
+
+  - !!misi (Atau !!title) ➔ Melihat daftar semua Misi pencapaian Title
+    berhalaman (◀️ ▶️) lengkap dengan status ✅ TERBUKA atau 🔒 TERKUNCI.
+
+🎤 6. Panggung Karaoke Santai & Sajam
 
   - !!q (Atau !!queue, !!karaoke) ➔ Menampilkan/memanggil ulang panel antrean
     karaoke santai 2 box terpisah di posisi terbawah chat.
-  - !!qj (Atau !!qjoin) ➔ Pintasan cepat bergabung ke antrean karaoke.
-  - !!ql (Atau !!qleave) ➔ Pintasan cepat keluar dari antrean karaoke.
-  - !!qd (Atau !!qdone) ➔ Pintasan selesai tampil (Khusus penyanyi aktif di
-    panggung).
-  - !!qskip (Atau !!qn) ➔ Memberikan vote skip untuk menurunkan penyanyi
-    AFK/stuck. Membutuhkan vote sebanyak ¼ dari warga VC (atau langsung lengser
-    jika ditekan Moderator).
-  - !!qclear (Khusus Mod/Admin) ➔ Membersihkan seluruh antrean karaoke di
-    channel tersebut.
+  - !!qj / !!ql / !!qd ➔ Pintasan cepat Join, Leave, dan Selesai Tampil.
+  - !!qskip (Atau !!qn) ➔ Vote skip untuk menurunkan penyanyi AFK (butuh ¼ vote
+    warga VC).
+  - !!sajam start / !!sajam end (Khusus Mod/Host) ➔ Memulai dan mengakhiri sesi
+    panggung Sajam Resmi di Voice Channel.
 
-🎙️ 3. Sesi Jamming / Panggung Sajam Resmi (Khusus Mod/Host)
-
-  - !!sajam start ➔ Memulai sesi Sajam Resmi di Voice Channel tempat Anda
-    bergabung saat ini.
-  - !!sajam (Atau !!s) ➔ Recall / menampilkan ulang panel antrean Sajam
-    terupdate.
-  - !!sajam end ➔ Mengakhiri seluruh sesi Sajam dan menampilkan rekapitulasi
-    statistik lengkap panggung.
-
-🎲 4. Event Gacha PPKM & Giveaway (Khusus Mod/Admin)
+🎲 7. Event Gacha PPKM & Giveaway (Khusus Mod/Admin)
 
   - !!ppkm [jumlah_slot] [durasi] [channel_target] ➔ Memulai gacha slot PPKM
-    dengan tombol pendaftaran interaktif dan counter peserta real-time.
-  - !!reroll ➔ Mengundi ulang seluruh pemenang gacha terakhir.
-  - !!reroll @NamaMember ➔ Mengundi ulang pemenang tertentu saja (mencoret
-    pemenang lama dan mencarikan penggantinya).
-  - !!ppkmconfig ➔ Membuka panel interaktif untuk mengelola role
-    blacklist/whitelist & user blacklist.
-  - !!giveaway ➔ Membuka panel pembuat giveaway berbasis Modal Popup.
+    dengan tombol pendaftaran interaktif.
+  - !!reroll [@Member] ➔ Mengundi ulang seluruh atau pemenang gacha tertentu.
+  - !!ppkmconfig ➔ Panel interaktif kelola Whitelist / Blacklist Role & User.
+  - !!giveaway atau /giveaway ➔ Membuka form pembuat event Giveaway.
       - Sponsor / Dari Siapa: Opsional (Akan ditampilkan di Embed jika diisi).
       - Filter Role: Tulis @Role untuk Whitelist atau !@Role untuk Blacklist
         (Temporer per-giveaway).
 
-💾 5. Manajemen Backup Database (Khusus Mod/Admin)
+💾 8. Manajemen Backup Database (Khusus Mod/Admin)
 
-  - !!db ➔ Menampilkan panduan singkat perintah database.
   - !!db backup ➔ Membuat salinan cadangan instan file database SQLite di folder
     data/backups/.
   - !!db list ➔ Menampilkan daftar 10 file backup database terbaru lengkap
     beserta tanggal dan ukurannya.
   - !!db restore [nama_file_backup.db] ➔ Memulihkan database utama menggunakan
-    file cadangan pilihan (dilengkapi tombol konfirmasi keamanan).
+    file cadangan pilihan.
 
 ============================================================================
 
 ❓ FAQ (Frequently Asked Questions)
 
-🎙️ Panggung & Karaoke
+1.  Kenapa saya tidak bisa bekerja (!!job) atau klaim gaji (!!harian)?
 
-    Apakah Karaoke Santai bisa digunakan di banyak channel sekaligus?
+      - Belum Punya KTP: Seluruh fitur pendapatan mewajibkan warga terdaftar di
+        kelurahan. Ketik !!lurah untuk membuat KTP terlebih dahulu!
 
-        BISA! Sistem Karaoke menggunakan arsitektur Multi-Room. Antrean dan penyanyi aktif di setiap channel/room terisolasi secara mandiri dan tidak akan bertabrakan.
+2.  Bagaimana cara membeli Kopi Suplemen Energi?
 
-    Gimana cara menurunkan penyanyi Karaoke yang AFK atau tidak mau turun?
+      - Ketik !!toko, pilih item ☕ Kopi Suplemen Energi (Rp 150.000) di
+        dropdown. Energi kerja kamu akan langsung pulih menjadi 5/5 Shift.
 
-        Member lain bisa menekan tombol ⏩ LENGSERKAN DIA atau mengetik !!qskip. Jika jumlah vote mencapai ¼ dari total warga di VC, penyanyi akan otomatis diturunkan.
+3.  Kenapa harga di toko bisa naik/turun?
 
-        Moderator yang menekan tombol tersebut dapat langsung melengserkan penyanyi secara instan (override).
+      - Toko menggunakan Indeks Inflasi Dinamis. Jika total uang beredar di
+        server terlalu banyak, harga toko akan naik. Jika terjadi resesi, toko
+        akan memberikan diskon! Ketik !!ekonomi untuk cek kondisi pasar.
 
-    Apa perbedaan antara Sesi Sajam dan Karaoke Santai?
+4.  Bagaimana cara membuat Giveaway khusus Role tertentu (Whitelist/Blacklist)?
 
-        Karaoke Santai (!!q): Bersifat mandiri/harian tanpa perlu dijaga Host/Mod.
+      - Jalankan !!giveaway atau Slash Command /giveaway. Pada kolom Filter
+        Role, tulis @Role untuk Whitelist atau !@Role untuk Blacklist. Filter
+        ini bersifat temporer per-giveaway.
 
-        Sajam Resmi (!!sajam): Sesi panggung resmi yang dipandu Host/Mod (!!sajam start), dilengkapi pemantauan pengunjung VC realtime dan laporan rekapitulasi statistik panggung lengkap saat diakhiri (!!sajam end).
+5.  Apakah antrean Karaoke atau Giveaway hilang jika bot restart?
 
-🎲 Event PPKM & Giveaway
+      - TIDAK! Sistem dilengkapi SQLite Persistence. Antrean Karaoke, penyanyi
+        aktif, dan timer Giveaway akan otomatis dipulihkan persis seperti posisi
+        terakhir.
 
-    Bagaimana cara membuat Giveaway khusus Role tertentu (Whitelist/Blacklist)?
+6.  Bagaimana cara sistem mencegah spam Karaoke untuk statistik KTP?
 
-        Jalankan !!giveaway, klik Buat Giveaway 🎁. Di kolom ke-5 (Filter Role), tulis @Role untuk Whitelist (hanya role tersebut yang bisa ikut) atau !@Role untuk Blacklist (role tersebut dilarang ikut).
-
-        Filter ini bersifat temporer per-giveaway, sehingga pembuatan giveaway berikutnya otomatis kembali tanpa filter.
-
-    Apa yang terjadi jika kolom Channel Target dikosongkan saat membuat Giveaway?
-
-        Bot akan otomatis mengirimkan pesan Giveaway ke channel tempat perintah !!giveaway dipanggil.
-
-    Bagaimana jika pemenang Gacha PPKM berhalangan hadir atau tidak ada di VC?
-
-        Moderator dapat mengetik !!reroll untuk mengundi ulang seluruh pemenang, atau !!reroll @NamaMember untuk mengganti pemenang tertentu saja.
-
-    Bagaimana cara membatasi siapa saja yang boleh ikut Gacha PPKM?
-
-        Ketik !!ppkmconfig untuk membuka panel interaktif kelola Whitelist/Blacklist Role dan User.
-
-💾 Database, Hosting & System
-
-    Apakah antrean Karaoke atau Giveaway hilang jika bot restart?
-
-        TIDAK! Sistem dilengkapi SQLite Persistence. Antrean Karaoke, penyanyi aktif, dan timer Giveaway akan otomatis dipulihkan persis seperti posisi terakhir saat bot dinyalakan kembali.
-
-    Mengapa di folder data/ ada file event_bot.db-wal dan event_bot.db-shm?
-
-        Itu adalah file bawaan dari mode SQLite WAL (Write-Ahead Logging). Mode ini aktif untuk memastikan proses read/write database berlangsung super cepat tanpa mengalami error database is locked. Ini 100% normal.
-
-    Bagaimana cara memantau kondisi CPU, RAM, dan Hosting tempat bot berjalan?
-
-        Moderator/Dev dapat mengetik !!bot (atau !!botstatus) untuk melihat laporan realtime penggunaan CPU, RAM, Disk, Latency Ping, dan kesehatan database.
-
-    Bagaimana cara kerja sistem Realtime Logging (#bot-log)?
-
-        Bot secara otomatis mencatat 5 peristiwa penting ke channel #bot-log: Mulai/Selesai Sajam, Memulai PPKM, Memulai Giveaway, serta Backup/Restore Database.
-
-    Bagaimana cara memulihkan database jika terjadi kesalahan data?
-
-        Moderator dapat mengetik !!db list untuk melihat daftar file cadangan, lalu jalankan !!db restore [nama_file.db]. Sistem dilengkapi tombol konfirmasi keselamatan sebelum menimpa data.
-
-🔧 Troubleshooting
-
-    Kok bot tidak merespon sama sekali saat diketik perintah?
-
-        Salah Channel: Pastikan Anda mengetik perintah di channel yang ID-nya terdaftar pada .env (ALLOWED_CHANNELS) atau di dalam Text Chat Voice Channel.
-
-        Izin Kurang: Perintah admin/mod memerlukan izin Discord bernama "Manage Server" (Kelola Server).
-
-        Bot Offline: Periksa terminal VS Code / hosting Anda, pastikan skrip python main.py berjalan tanpa error.
-
-    Bagaimana jika saya mengubah ID channel/role pada file .env?
-
-        Setiap kali Anda mengubah isi file .env, Anda wajib melakukan restart bot (Ctrl + C lalu jalankan kembali python main.py) agar variabel baru terbaca oleh Python.
+      - Penyanyi wajib berada di atas panggung minimal 60 detik (1 menit) agar
+        penampilannya terhitung ke statistik KTP. Tampil di bawah 1 menit tidak
+        akan menambah angka KTP.

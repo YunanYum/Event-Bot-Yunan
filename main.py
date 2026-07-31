@@ -76,12 +76,18 @@ async def load_extensions():
         await bot.load_extension('cogs.stage.sajam')
         await bot.load_extension('cogs.stage.karaoke')
 
-        # 3. Module Sistem & Admin
+        # 3. Module Warga, KTP, Ekonomi & Pekerjaan
+        await bot.load_extension('cogs.citizen.ktp')
+        await bot.load_extension('cogs.citizen.misi')
+        await bot.load_extension('cogs.citizen.economy')
+        await bot.load_extension('cogs.citizen.job')
+
+        # 4. Module Sistem & Admin
         await bot.load_extension('cogs.system.admin')
         await bot.load_extension('cogs.system.help')
         await bot.load_extension('cogs.system.logger')
 
-        print("✨ Seluruh ekstensi Cogs (Event, Stage, System) berhasil dimuat!")
+        print("✨ Seluruh ekstensi Cogs berhasil dimuat lengkap!")
     except Exception as e:
         print(f"❌ Gagal memuat ekstensi: {e}")
 
