@@ -1,6 +1,6 @@
 # 🤖 Event Bot Yunan - MAHA5 Helper Bot
 
-Bot Discord multifungsi dan interaktif yang dirancang khusus untuk komunitas MAHA5. Dilengkapi dengan sistem KTP Digital, bursa kerja puzzle realtime, simulasi ekonomi makro realistis, panggung musik live (Sajam & Karaoke), gacha slot event, event giveaway ber-filter, monitoring hosting, serta logging realtime.
+Bot Discord multifungsi dan interaktif yang dirancang khusus untuk komunitas MAHA5. Dilengkapi dengan sistem KTP Digital, bursa kerja puzzle realtime, simulasi ekonomi makro realistis, studio naskah dubbing (60+ script), panggung musik live (Sajam & Karaoke), gacha slot event, event giveaway ber-filter, monitoring hosting, serta logging realtime.
 
 ============================================================================
 
@@ -13,12 +13,13 @@ Bot Discord multifungsi dan interaktif yang dirancang khusus untuk komunitas MAH
 | **📊 Ekonomi Makro Realistis** | Indeks inflasi dinamis (`!!ekonomi`), penyesuaian harga toko otomatis, pajak Sultan progresif (> Rp 10 Juta), transfer saldo (`!!pay`), dan gaji pasif Voice Channel senyap (VC Mining). |
 | **🏪 Toko Kelurahan MAHA5** | Toko kosmetik Title berjenjang (4 Tier) & item konsumsi **☕ Kopi Suplemen Energi** (+5 Shift Kerja) dengan harga terpengaruh inflasi pasar. |
 | **📜 Misi & Unlock Title** | Title KTP dibuka (*unlocked*) otomatis dari Misi keaktifan event & Fans. Tampilan `!!misi` dilengkapi navigasi halaman `◀️` `▶️`. |
+| **🎭 Studio Naskah Dubbing 60+** | Katalog 60+ naskah Voice Acting interaktif (`!!script`) dengan tampilan lirik 3 bahasa (🇯🇵 JP, 🔤 Romaji, 🇮🇩 Indo), pembeda warna kategori (Monolog 🟡, Duo 🟣, Multi-Cast 🔷), serta impor file `.txt`/`.json` (`!!uploadscript`). |
 | **🎤 Karaoke Santai Multi-Room** | Antrean karaoke harian multi-room (`!!q`), vote skip dinamis (¼ warga VC), dan proteksi minimal 1 menit panggung untuk pencatatan statistik KTP. |
 | **🎙️ Panggung Live Sajam** | Sistem panggung jamming/nyanyi resmi terintegrasi dengan pemantauan pengunjung VC dan rekapitulasi statistik lengkap saat sesi diakhiri. |
 | **🎁 Event Giveaway Filtered** | Pembuat event pembagian hadiah via Modal Popup atau **Slash Command `/giveaway`**. Mendukung Sponsor (Opsional) & Filter Role Whitelist (`@Role`) / Blacklist (`!@Role`) temporer. |
 | **🎲 Gacha Interaktif PPKM** | Pendaftaran gacha slot panggung menggunakan Tombol (Buttons) dengan *live-counter* peserta real-time, penyaringan Voice Channel, serta fitur Reroll. |
 | **🖥️ Monitoring System & Hosting** | Perintah `!!bot` khusus staf/dev untuk memantau performa CPU, RAM Hosting, RAM Bot, Disk, Latency Ping, dan kesehatan SQLite. |
-| **📜 Realtime Audit Logger** | Pencatatan otomatis secara realtime ke channel log (`#bot-log`) untuk 6 peristiwa penting (KTP, Sajam, PPKM, Giveaway, Backup DB). |
+| **📜 Realtime Audit Logger** | Pencatatan otomatis secara realtime ke channel log (`#bot-log`) untuk 5 peristiwa penting (KTP, Sajam, PPKM, Giveaway, Backup DB). |
 | **📖 Adaptive Help Book** | Buku saku warga interaktif 7 Bab (`!!help`) dengan tampilan adaptif berdasarkan hak akses (Warga vs Staf/Mod). |
 | **💾 SQLite WAL & Backup System** | Mode *Write-Ahead Logging* (WAL) untuk performa cepat tanpa *database locking*, serta manajemen backup DB langsung dari chat (`!!db`). |
 
@@ -108,10 +109,16 @@ dahulu!
   - !!toko (Atau !!shop, !!beli) ➔ Membuka Toko Kelurahan (Title Kosmetik MAHA5
     & ☕ Kopi Suplemen Energi) dengan harga terpengaruh inflasi pasar.
 
-📜 5. Misi & Title Pencapaian
+🎭 5. Studio Naskah Dubbing (Voice Acting)
 
-  - !!misi (Atau !!title) ➔ Melihat daftar semua Misi pencapaian Title
-    berhalaman (◀️ ▶️) lengkap dengan status ✅ TERBUKA atau 🔒 TERKUNCI.
+  - !!script (Atau !!naskah, !!dubbing) ➔ Membuka Katalog 60+ Naskah Voice
+    Acting interaktif (◀️, ▶️, 🔢 Lompat, 🔍 Cari, Dropdown Batch).
+      - 🟡 Solo Monolog (1P): Warna Embed Emas.
+      - 🟣 Duo Dialog (2P): Warna Embed Lavender/Ungu.
+      - 🔷 Multi-Cast (3P+): Warna Embed Cyan/Biru.
+  - !!uploadscript (Atau !!uploadnaskah, !!addscript - Khusus Mod) ➔
+    Mengimpor/menambah naskah baru secara instan dengan melampirkan file .txt
+    atau .json.
 
 🎤 6. Panggung Karaoke Santai & Sajam
 
@@ -123,7 +130,12 @@ dahulu!
   - !!sajam start / !!sajam end (Khusus Mod/Host) ➔ Memulai dan mengakhiri sesi
     panggung Sajam Resmi di Voice Channel.
 
-🎲 7. Event Gacha PPKM & Giveaway (Khusus Mod/Admin)
+📜 7. Misi & Title Pencapaian
+
+  - !!misi (Atau !!title) ➔ Melihat daftar semua Misi pencapaian Title
+    berhalaman (◀️ ▶️) lengkap dengan status ✅ TERBUKA atau 🔒 TERKUNCI.
+
+🎲 8. Event Gacha PPKM & Giveaway (Khusus Mod/Admin)
 
   - !!ppkm [jumlah_slot] [durasi] [channel_target] ➔ Memulai gacha slot PPKM
     dengan tombol pendaftaran interaktif.
@@ -134,7 +146,7 @@ dahulu!
       - Filter Role: Tulis @Role untuk Whitelist atau !@Role untuk Blacklist
         (Temporer per-giveaway).
 
-💾 8. Manajemen Backup Database (Khusus Mod/Admin)
+💾 9. Manajemen Backup Database (Khusus Mod/Admin)
 
   - !!db backup ➔ Membuat salinan cadangan instan file database SQLite di folder
     data/backups/.
@@ -147,21 +159,24 @@ dahulu!
 
 ❓ FAQ (Frequently Asked Questions)
 
-1.  Kenapa saya tidak bisa bekerja (!!job) atau klaim gaji (!!harian)?
+1.  Kategori naskah apa saja yang tersedia di Studio !!script?
+
+      - Katalog memiliki 60+ Naskah yang terbagi dalam 6 Kategori: Romance &
+        Drama, Thriller & Dark Drama, Komedi Militer, Edukasi & Budaya Jepang,
+        VTuber Special (Debut & Collab), serta Rekreasi Adegan Anime Populer
+        (Your Name, Jujutsu Kaisen, Attack on Titan, Demon Slayer, Death Note,
+        dll.).
+
+2.  Bagaimana cara mengimpor naskah dubbing baru secara massal?
+
+      - Cukup unggah file .json atau .txt berisi naskah kamu di Discord, lalu
+        pada komentar lampiran ketik !!uploadscript. Bot akan langsung mengimpor
+        semuanya dalam 1 detik!
+
+3.  Kenapa saya tidak bisa bekerja (!!job) atau klaim gaji (!!harian)?
 
       - Belum Punya KTP: Seluruh fitur pendapatan mewajibkan warga terdaftar di
         kelurahan. Ketik !!lurah untuk membuat KTP terlebih dahulu!
-
-2.  Bagaimana cara membeli Kopi Suplemen Energi?
-
-      - Ketik !!toko, pilih item ☕ Kopi Suplemen Energi (Rp 150.000) di
-        dropdown. Energi kerja kamu akan langsung pulih menjadi 5/5 Shift.
-
-3.  Kenapa harga di toko bisa naik/turun?
-
-      - Toko menggunakan Indeks Inflasi Dinamis. Jika total uang beredar di
-        server terlalu banyak, harga toko akan naik. Jika terjadi resesi, toko
-        akan memberikan diskon! Ketik !!ekonomi untuk cek kondisi pasar.
 
 4.  Bagaimana cara membuat Giveaway khusus Role tertentu (Whitelist/Blacklist)?
 
@@ -174,9 +189,3 @@ dahulu!
       - TIDAK! Sistem dilengkapi SQLite Persistence. Antrean Karaoke, penyanyi
         aktif, dan timer Giveaway akan otomatis dipulihkan persis seperti posisi
         terakhir.
-
-6.  Bagaimana cara sistem mencegah spam Karaoke untuk statistik KTP?
-
-      - Penyanyi wajib berada di atas panggung minimal 60 detik (1 menit) agar
-        penampilannya terhitung ke statistik KTP. Tampil di bawah 1 menit tidak
-        akan menambah angka KTP.

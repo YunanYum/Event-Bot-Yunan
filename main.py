@@ -75,6 +75,7 @@ async def load_extensions():
         # 2. Module Panggung Musik & Voice
         await bot.load_extension('cogs.stage.sajam')
         await bot.load_extension('cogs.stage.karaoke')
+        await bot.load_extension('cogs.stage.script')
 
         # 3. Module Warga, KTP, Ekonomi & Pekerjaan
         await bot.load_extension('cogs.citizen.ktp')

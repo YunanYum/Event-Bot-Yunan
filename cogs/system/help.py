@@ -17,13 +17,13 @@ def build_cover_embed(author, prefix: str) -> discord.Embed:
         title="📖 BUKU SAKU WARGA & PANDUAN KELURAHAN MAHA5",
         description=(
             f"Halo {author.mention}! Selamat datang di Pusat Informasi Bot Kelurahan MAHA5.\n"
-            "Buku panduan ini berisi seluruh petunjuk kerja, identitas warga, sistem ekonomi makro, panggung hiburan, dan aturan kelurahan.\n\n"
+            "Buku panduan ini berisi seluruh petunjuk kerja, identitas warga, sistem ekonomi makro, panggung hiburan, studio naskah dubbing, dan aturan kelurahan.\n\n"
             "📌 **DAFTAR ISI BUKU SAKU:**\n"
             "🪪 **Bab 1:** Identitas Warga & KTP Digital\n"
             "🧩 **Bab 2:** Bursa Kerja Puzzle Realtime (5 Shift/Hari)\n"
             "📊 **Bab 3:** Ekonomi Makro, Bank & Toko Kelurahan\n"
             "📜 **Bab 4:** Sistem Misi & Title Pencapaian\n"
-            "🎙️ **Bab 5:** Panggung Karaoke Santai & Voice Backstage\n"
+            "🎙️ **Bab 5:** Panggung Karaoke, Sajam & Studio Naskah Dubbing\n"
             "🎲 **Bab 6:** Event Gacha Slot PPKM & Giveaway\n"
         ),
         color=THEME_COLOR
@@ -51,7 +51,7 @@ class HelpDropdown(discord.ui.Select):
             discord.SelectOption(label="Bab 2: Bursa Kerja Puzzle", description="5 Mini-game puzzle kerja, energi, & gaji dinamis.", emoji="🧩", value="kerja"),
             discord.SelectOption(label="Bab 3: Ekonomi & Toko", description="Indeks inflasi, gaji VC, transfer, & Kopi Energi.", emoji="📊", value="ekonomi"),
             discord.SelectOption(label="Bab 4: Misi & Title", description="Cara unlock Title & pasang Oshi VTuber.", emoji="📜", value="misi"),
-            discord.SelectOption(label="Bab 5: Panggung & Voice", description="Antrean karaoke live multi-room & vote skip.", emoji="🎙️", value="panggung"),
+            discord.SelectOption(label="Bab 5: Panggung & Naskah Dubbing", description="Antrean karaoke, Sajam, & Katalog 60+ Naskah.", emoji="🎙️", value="panggung"),
             discord.SelectOption(label="Bab 6: Gacha & Giveaway", description="Gacha slot event PPKM & event giveaway.", emoji="🎲", value="event"),
         ]
 
@@ -191,8 +191,8 @@ class HelpDropdown(discord.ui.Select):
 
             elif value == "panggung":
                 embed = discord.Embed(
-                    title="🎙️ Bab 5: Panggung Karaoke Santai & Voice Backstage",
-                    description="Aktivitas jamming live dan antrean bernyanyi otomatis.",
+                    title="🎙️ Bab 5: Panggung, Voice & Studio Naskah Dubbing",
+                    description="Aktivitas panggung musik live dan studio latihan voice acting.",
                     color=THEME_COLOR
                 )
                 embed.add_field(
@@ -204,10 +204,20 @@ class HelpDropdown(discord.ui.Select):
                     inline=False
                 )
                 embed.add_field(
-                    name="2️⃣ Demokrasi Lengser (Vote Skip)",
-                    value="> Jika penyanyi di panggung *stuck*, warga VC bisa menekan tombol **⏩ Lengserkan** (Membutuhkan ¼ vote dari total warga VC).",
+                    name="2️⃣ Studio Katalog 60+ Naskah Dubbing (`!!script`)",
+                    value=(
+                        f"> `{prefix}script` atau `{prefix}naskah` ➔ Buka Katalog Naskah Voice Acting!\n"
+                        "• **Fitur Reader:** Tombol `◀️` `▶️`, `🔢 Lompat`, `🔍 Cari`, dan Dropdown Rentang.\n"
+                        "• **Pembeda Kategori:** 🟡 **Solo Monolog (1P)**, 🟣 **Duo Dialog (2P)**, 🔷 **Multi-Cast (3P+)**."
+                    ),
                     inline=False
                 )
+                if self.has_mod:
+                    embed.add_field(
+                        name="3️⃣ Impor Naskah Baru (Khusus Staf)",
+                        value=f"> `{prefix}uploadscript` ➔ Unggah file `.txt` atau `.json` untuk menambah naskah baru ke katalog secara instan!",
+                        inline=False
+                    )
 
             elif value == "event":
                 embed = discord.Embed(
@@ -229,7 +239,7 @@ class HelpDropdown(discord.ui.Select):
                         value=(
                             f"> `{prefix}ppkm [slot] [durasi] [channel]` ➔ Buat undian slot event.\n"
                             f"> `{prefix}reroll` ➔ Kocok ulang pemenang gacha PPKM.\n"
-                            f"> `{prefix}giveaway` ➔ Buka form popup pembuat Giveaway."
+                            f"> `{prefix}giveaway` atau `/giveaway` ➔ Buka form pembuat Giveaway."
                         ),
                         inline=False
                     )
