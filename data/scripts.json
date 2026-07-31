@@ -1344,6 +1344,286 @@
         { "speaker": "Itachi", "jp": "だが、今の俺なら言える。お前がこれからどうなろうと……俺はお前を、ずっと愛している。", "romaji": "Itachi: Daga, ima no ore nara ieru. Omae ga korekara dou narou to…… ore wa omae o, zutto aishite iru.", "indo": "\"Tapi sekarang, aku bisa mengatakannya dengan jujur. Apa pun jalan yang kamu pilih mulai saat ini... aku akan selalu mencintaimu selamanya.\"" },
         { "speaker": "Sasuke", "jp": "（涙が溢れ出し、言葉を失う）……イタチ……！", "romaji": "Sasuke: (Namida ga afuredashi, kotoba o ushinau) ……Itachi……!", "indo": "*(Air mata menetes deras, tak sanggup berkata-kata)* \"...Itachi...!\"" }
       ]
+    },
+    {
+      "id": 61,
+      "title": "Segel Naga Hitam di Tangan Kanan",
+      "description": "Seorang pemuda berdiri di atap sekolah saat angin kencang, menahan gejolak 'Naga Hitam' yang tersegel di tangan kanannya sambil berusaha agar kekuatannya tidak melahap dunia.",
+      "genre": "Comedy/Chuunibyou",
+      "castCount": 1,
+      "lines": [
+        { "speaker": "Protagonist", "jp": "（右手を押さえ、痛みに耐えるように悶絶する）くっ……！静まれ……俺の右腕の『黒炎竜』よ！今暴れ出すな！", "romaji": "Ku...! Shizumare... ore no migiude no 'Kokuenryuu' yo! Ima abaredasu na!", "indo": "*(Memegangi tangan kanan, meringis seolah menahan rasa sakit luar biasa)* \"Kuh...! Tenanglah... 'Naga Api Hitam' di tangan kananku! Jangan mengamuk sekarang!\"" },
+        { "speaker": "Protagonist", "jp": "この街にはまだ……俺が守るべき人々がいるんだ！お前の破壊衝動を解き放つわけにはいかない！", "romaji": "Kono machi ni wa mada... ore ga mamorubeki hitobito ga iru n da! Omae no hakai shoudou o tokihanatsu wake ni wa ikanai!", "indo": "\"Di kota ini... masih ada orang-orang yang harus kulindungi! Aku tidak bisa membiarkan hasrat penghancurmu terlepas begitu saja!\"" },
+        { "speaker": "Action", "jp": "（眼帯に手を当て、風に髪をなびかせる）", "romaji": "Gantai ni te o ate, kaze ni kami o nabikaseru", "indo": "*Menyentuh penutup matanya, membiarkan rambutnya tertiup angin*" },
+        { "speaker": "Protagonist", "jp": "『邪視』が共鳴している……。近くに『機関（オーガニゼーション）』の刺客がいるのか？！", "romaji": "'Jashi' ga kyoumei shite iru... Chikaku ni 'Ooganizeeshon' no shikaku ga iru no ka?!", "indo": "\"'Mata Iblis'-ku beresonansi... Apa ada pembunuh bayaran dari 'Organisasi Rahasia' di dekat sini?!\"" },
+        { "speaker": "Protagonist", "jp": "ふっ……面白い。世界が俺を拒絶するというのなら、俺はこの暗黒の力で、運命そのものを書き換えてやる！", "romaji": "Fu... omoshiroi. Sekai ga ore o kyosetsu suru to iu no nara, ore wa kono ankoku no chikara de, unmei sonomono o kakikaete yarai!", "indo": "*(Tersenyum sinis)* \"Fuh... menarik. Jika dunia ini menolak keberadaanku, maka dengan kekuatan kegelapan ini, aku sendiri yang akan menulis ulang takdir itu!\"" },
+        { "speaker": "Action", "jp": "（ポーズを決め、闇に向かって叫ぶ）", "romaji": "Poozu o kime, yami ni mukatte sakebu", "indo": "*Memasang pose dramatis, berteriak ke arah langit*" },
+        { "speaker": "Protagonist", "jp": "降臨せよ、漆黒の契約者よ！闇の宴を始めようじゃないか！", "romaji": "Koorin seyo, shikkoku no keiyakusha yo! Yami no utage o hajimeryou ja nai ka!", "indo": "\"Bangkitlah, wahai Sang Pemilik Kontrak Hitam! Mari kita mulai pesta kegelapan ini!\"" }
+      ]
+    },
+    {
+      "id": 62,
+      "title": "Pertempuran Tak Kasat Mata di Taman Kota",
+      "description": "Dua sahabat saling bertarung sengit menggunakan payung dan penggaris, mengeluarkan jurus-jurus sihir tingkat tinggi yang sepenuhnya merupakan imajinasi di kepala mereka.",
+      "genre": "Comedy/Chuunibyou",
+      "castCount": 2,
+      "lines": [
+        { "speaker": "Ren", "jp": "（ビニール傘を剣のように構える）くくく……来たな、カイティング！この『聖剣アンブレラ』の刃にかかれば、お前の暗黒魔術など一瞬で霧となる！", "romaji": "Kukuku... Kita na, Kaitingu! Kono 'Seiken Anburera' no yaiba ni kakareba, omae no ankoku majutsu nado isshun de kiri to naru!", "indo": "*(Memegang payung bagai pedang)* \"Kukuku... Kamu datang juga, Kaito! Di hadapan 'Pedang Suci Payung' ini, sihir hitammu akan hancur jadi abu dalam sekejap!\"" },
+        { "speaker": "Kaito", "jp": "（３０センチ定規を構え、冷笑する）愚かな、レン……！俺の『黒銀の魔尺』が刻む空間の歪みを見切れると思っているのか？！", "romaji": "Orokana, Ren...! Ore no 'Kokugin no Majaku' ga kizamu kuukan no hizumi o mikireru to omotte iru no ka?!", "indo": "*(Memegang penggaris 30cm, tersenyum sinis)* \"Bodoh sekali kamu, Ren...! Apa kamu pikir kamu bisa membaca distorsi ruang yang diciptakan oleh 'Penggaris Perak Hitam'-ku ini?!\"" },
+        { "speaker": "Action", "jp": "（二人が公園の砂場で激しく傘と定規をぶつけ合い、効果音を口で叫ぶ）", "romaji": "Futari ga kooen no sunaba de hageshiku kasa to joogi o butsukeai, koukaon o kuchi de sakebu", "indo": "*Keduanya membenturkan payung dan penggaris dengan heboh di taman, sambil menirukan suara efek ledakan dengan mulut sendiri*" },
+        { "speaker": "Ren", "jp": "食らえ！『ファイナル・スプラッシュ・ストライク』！！（傘を勢いよく開く）", "romaji": "Kurae! 'Fainaru Supurasshu Sutoraiku'!!", "indo": "\"Rasakan ini! Final Splash Strike!! *(Membuka payungnya secara mendadak)*\"" },
+        { "speaker": "Kaito", "jp": "（大げさに吹き飛ぶフリをして芝生に倒れる）ぐわぁぁっ！バカな……この俺の『絶対防御障壁』が破られるとは……！だが……勝負はまだ終わっていない！", "romaji": "Guwaaa! Baka na... kono ore no 'Zettai Boogyo Shooheki' ga yarareru to wa...! Daga... shoobu wa mada owattenai!", "indo": "*(Pura-pura terlempar dahsyat dan jatuh ke rumput)* \"Ughaaah! Tidak mungkin... Pertahanan Benteng Mutlakku bisa tembus...?! Tapi... pertarungan ini belum berakhir!\"" }
+      ]
+    },
+    {
+      "id": 63,
+      "title": "Adikku Sang Penguasa Kegelapan",
+      "description": "Yuto mencoba menjelaskan ramalan akhir zaman dan kutukan darahnya kepada adiknya Rina, namun adiknya hanya peduli soal jemuran dan meminta Yuto membuang sampah.",
+      "genre": "Comedy/Slice of Life/Chuunibyou",
+      "castCount": 2,
+      "lines": [
+        { "speaker": "Yuto", "jp": "（黒いパーカーのフードを深かぶりながら、神秘的に語る）リナ……近づくな。今日の俺は、血の抑えがきかない……。紅蓮の魔力が暴走しているんだ。", "romaji": "Rina... chikadukuna. Kyou no ore wa, chi no osaega kikanai... Guren no maryoku ga boosou shite iru n da.", "indo": "*(Menutup kepala dengan kupluk hoodie hitam, berbicara misterius)* \"Rina... jangan mendekat. Hari ini gejolak darahku sulit dikendalikan... Sihir Api Merahku sedang mengamuk.\"" },
+        { "speaker": "Rina", "jp": "（呆れた顔で洗濯物をたたみながら）はいはい。お兄ちゃん、そんなことよりベランダの洗濯物取り込んでよ。雨降りそうだし。", "romaji": "Hai hai. Oniichan, sonna koto yori beranda no sentakumono torikonde yo. Ame furisou dashi.", "indo": "*(Menghela napas lelah sambil melipat pakaian)* \"Iya, iya. Dari pada ngomong gitu, mending Abang angkat jemuran di balkon deh. Udah mau hujan tuh.\"" },
+        { "speaker": "Yuto", "jp": "（机を叩いて立ち上がる）愚かな妹よ！天が泣いているのは、俺の封印が解けかけているからだ！洗濯物どころではない！", "romaji": "Orokana imooto yo! Ten ga naite iru no wa, ore no fuuin ga tokekakete iru kara da! Sentakumono dokoro de wa nai!", "indo": "*(Memukul meja dan bangkit berpose)* \"Wahai adikku yang naif! Langit menangis karena segel kekuatanku mulai terlepas! Ini bukan saatnya memikirkan jemuran!\"" },
+        { "speaker": "Rina", "jp": "（冷たい視線で）あと、夕飯のゴミ出しもね。やらないなら、お母さんに『お兄ちゃんが部屋で謎のポーズ取って大声出してる』ってバラすから。", "romaji": "Ato, yuuhan no gomi dashi mo ne. Yaranai nara, okaasan ni 'oniichan ga heya de nazo no poozu totte oogoe dashiteru' tte barasu kara.", "indo": "*(Menatap dingin)* \"Satu lagi, buang sampah sisa makan malam ya. Kalau nggak mau, aku laporkan ke Ibu kalau Abang suka berpose aneh sambil teriak-teriak sendiri di kamar.\"" },
+        { "speaker": "Yuto", "jp": "（一瞬で素に戻り、焦る）待て！それだけは……『聖神（おかん）』にだけは知らせるな！わかった、ゴミは俺が処分（ディスポーズ）する！", "romaji": "Mate! Sore dake wa... 'Okan' ni dake wa shiraseru na! Wakatta, gomi wa ore ga disupoozu suru!", "indo": "*(Seketika panik dan kembali ke kepribadian normal)* \"Tunggu! Jangan... jangan laporkan ke 'Kanjeng Ibu'! Oke oke, sampahnya bakal aku musnahkan (*dispose*) sekarang!\"" }
+      ]
+    },
+    {
+      "id": 64,
+      "title": "Rapat Rahasia Organisasi Kegelapan",
+      "description": "Tiga anggota aliansi rahasia berkumpul di sudut perpustakaan sekolah untuk menentukan kode nama dan misi menyelamatkan dunia, namun malah berdebat soal siapa yang julukannya paling keren.",
+      "genre": "Comedy/Chuunibyou",
+      "castCount": 3,
+      "lines": [
+        { "speaker": "Lucifer (Sora)", "jp": "（眼鏡を指で押し上げ、ヒソヒソ声で）集まったな、我が『漆黒の結社（ダーク・シンジケート）』の同胞たちよ。今日の議題は、世界の裏で蠢く暗黒組織の排除だ。", "romaji": "Atsumatta na, waga 'Daaku Shinjikeeto' no doohou-tachi yo. Kyou no gidai wa, sekai no ura de umeku ankoku soshiki no haiju da.", "indo": "*(Membetulkan kacamata, berbisik)* \"Akhirnya kita berkumpul, wahai para anggota 'Dark Syndicate'. Agenda kita hari ini adalah memusnahkan organisasi kegelapan yang bersembunyi di balik bayangan dunia.\"" },
+        { "speaker": "Chronos (Ken)", "jp": "（腕組みをしてスカす）ふん、まどろっこしいな、ルシファー。俺の『時空を操る力（クロノス）』で、奴らを過去ごと消し去れば済む話だ。", "romaji": "Fun, madorokkoshii na, Rushifaa. Ore no 'Kuronosu' de, yatsura o kako goto keshisareba sumu hanashi da.", "indo": "*(Bersedekap sok keren)* \"Hmph, berbelit-belit sekali, Lucifer. Dengan 'Kekuatan Pengendali Waktu' (Chronos) milikku, aku bisa memusnahkan mereka bersama masa lalunya.\"" },
+        { "speaker": "Valkyrie (Aoi)", "jp": "（図書室の本で顔を隠しながら）ちょっと待ちなさいよ！二人のコードネーム、『ルシファー』と『クロノス』ってカッコよすぎない？！なんで私だけ『ヴァルキリー・あおい』なのよ！もっとダークな奴にして！", "romaji": "Chotto machinasai yo! Futari no koodoneemu, 'Rushifaa' to 'Kuronosu' tte kakko yosuginai?! Nande watashi dake 'Varukirii Aoi' no yo! Motto daaku na yatsu ni shite!", "indo": "*(Membuka buku perpustakaan untuk menutupi wajah)* \"Tunggu dulu deh! Kenapa julukan kalian berdua keren banget ('Lucifer' & 'Chronos')?! Kenapa cuma aku yang dapat nama 'Valkyrie Aoi'?! Ganti dong sama nama yang lebih dark!\"" },
+        { "speaker": "Lucifer (Sora)", "jp": "（真顔で反論）ヴァルキリー、私情を挟むな！コードネームの変更は『古代の儀式』を経なければ不可能だ！", "romaji": "Varukirii, shijoo o hasamu na! Koodoneemu no henkoo wa 'Kodai no Gishiki' o henakereba fukanou da!", "indo": "*(Dengan wajah datar)* \"Valkyrie, jangan membawa urusan pribadi! Pengubahan julukan rahasia hanya bisa dilakukan lewat 'Ritual Kuno'!\"" },
+        { "speaker": "Chronos (Ken)", "jp": "（欠伸をしながら）ていうか、ここ図書室だから静かにしろよ。司書（ガーディアン）に見つかったら出禁になるぞ。", "romaji": "Teiuka, koko toshoshitsu dakara shizuka ni shiro yo. Shisho ni mitsukattara dekin ni naru zo.", "indo": "*(Menguap)* \"Lagipula ini di perpustakaan, pelan-pelan dong suaranya. Kalau ketahuan Petugas penjaga perpustakaan, kita bisa dilarang masuk lagi lho.\"" }
+      ]
+    },
+    {
+      "id": 65,
+      "title": "Ramuan Eliksir di Minimarket",
+      "description": "Seorang pemuda berada di minimarket, menatap lemari pendingin dengan sangat dramatis seolah sedang memilih ramuan sihir penambah mana sebelum menghadapi Ujian Akhir Semester.",
+      "genre": "Comedy/Chuunibyou",
+      "castCount": 1,
+      "lines": [
+        { "speaker": "Protagonist", "jp": "（コンビニの冷蔵庫の前で真剣な顔で仁王立ちする）ふむ……試練の時が来たか。この透明な障壁の向こうに眠る、魔力を回復させる『聖なる霊薬（エリクサー）』……。", "romaji": "Fumu... shiren no toki ga kita ka. Kono toomei na shooheki no mukoo ni nemuru, maryoku o kaifuku saseru 'Erikusaa'...", "indo": "*(Berdiri tegap di depan lemari pendingin minimarket dengan wajah sangat serius)* \"Hmm... Waktu ujian telah tiba. Di balik dinding transparan ini, bersemayam 'Eliksir Suci' penambah mana...\"" },
+        { "speaker": "Protagonist", "jp": "（手を出しかけて止める）待てよ……『青き竜の果汁（ポカリスエット）』にするべきか、それとも『漆黒の覚醒水（ブラックコーヒー）』にするべきか……。今日の『期末試験（ラグナロク）』を乗り越えるには……。", "romaji": "Mate yo... 'Aoki Ryuu no Kajuu' ni suru beki ka, soretomo 'Shikkoku no Kakuseisui' ni suru beki ka... Kyou no 'Ragunaroku' o norikoeru ni wa...", "indo": "*(Baru mau memegang pintu lalu berhenti)* \"Tunggu dulu... Apa aku harus memilih 'Sari Buah Naga Biru' (Pocari Sweat), atau 'Air Kebangkitan Hitam' (Kopi Hitam)... Untuk melewati 'Pertempuran Ragnarok' (Ujian Akhir) hari ini...\"" },
+        { "speaker": "Action", "jp": "（レジでお金を払う動作をしながら）", "romaji": "Reji de okane o harau doosa o shinagara", "indo": "*Meminta barangnya diproses di kasir sambil bergumam sendiri*" },
+        { "speaker": "Protagonist", "jp": "店員（ソウル・キーパー）よ、この価値ある紙片（千円札）を受け取るがいい。……ククク、釣り銭はいらん。（あ、やっぱり５０円返してください）", "romaji": "Ten'in yo, kono kachi aru shihen o uketoruga ii... Kukuku, tsurisen wa iran. (A, yappari gojuu-en kaeshite kudasai)", "indo": "\"Wahai Penjaga Jiwa (Kasir), terimalah lembaran berharga (uang 10ribu) ini... Kukuku, kembaliannya tidak perlu. *(Eh, tapi tunggu, kembalian 500 peraknya minta dong!)*\"" }
+      ]
+    },
+    {
+      "id": 66,
+      "title": "Tertangkap Basah Pose Pahlawan",
+      "description": "Shin sedang memperagakan jurus pemanggil petir di kelas yang sepi, tanpa menyadari gadis yang disukainya, Mayu, berdiri di pintu dan menyaksikan seluruh aksinya dengan polos.",
+      "genre": "Comedy/Romance/Chuunibyou",
+      "castCount": 2,
+      "lines": [
+        { "speaker": "Shin", "jp": "（誰もいない教室で、窓際に向かってポーズを決めながら熱演する）我は漆黒の破壊神！我が封印されし右腕よ、今こそ目覚めよ！雷鳴よ、響き渡れーーっ！！", "romaji": "Ware wa shikkoku no hakaishin! Waga fuuinsareshi migiude yo, ima koso mezame yo! Raimei yo, hibikiwataree!!", "indo": "*(Di kelas yang sepi, berpose dramatis ke arah jendela)* \"Akulah Dewa Penghancur Kegelapan! Tangan kananku yang tersegel, bangkitlah sekarang! Petir, bergemuruhlah--!!\"" },
+        { "speaker": "Mayu", "jp": "（ドアの隙間からひょっこり顔を出し、パチパチと拍手する）すごーい！シンくん、劇の練習？すっごく気合入ってるね！", "romaji": "Sugooi! Shin-kun, geki no renshuu? Suggoku kiai haitteru ne!", "indo": "*(Muncul dari balik pintu, bertepuk tangan polos)* \"Keren banget! Shin-kun, lagi latihan drama ya? Semangat banget kelihatan nya!\"" },
+        { "speaker": "Shin", "jp": "（顔を真っ赤にして固まり、ロボットのようにゆっくり振り返る）ま、マユ……？！い、いつからそこに……？！", "romaji": "Ma, Mayu...?! I, itsu kara soko ni...?!", "indo": "*(Wajahnya memerah padam, mematung lalu membalikkan badan kaku seperti robot)* \"M-Mayu...?! S-Sejak kapan kamu berdiri di situ...?!\"" },
+        { "speaker": "Mayu", "jp": "（ニコニコしながら）『我が封印されし右腕よ』のところからだよ！かっこいいポーズだね！何のアニメのセリフ？", "romaji": "'Waga fuuinsareshi migiude yo' no tokoro kara da yo! Kakkoii poozu da ne! Nani no anime no serifu?", "indo": "*(Tersenyum polos)* \"Sejak bagian 'Tangan kananku yang tersegel'! Posenya keren banget! Itu dialog anime apa?\"" },
+        { "speaker": "Shin", "jp": "（頭を抱えてうずくまる）あああぁぁっ！！死にたい！今すぐ異世界に転生したいぃぃっ！！", "romaji": "Aaaaa!! Shinitai! Ima sugu isekai ni tensei shitaiii!!", "indo": "*(Meremas kepala dan jongkok terpuruk)* \"AAAAAAH!! Aku mau mati aja! Tolong lempar aku ke isekai sekarang juga!!\"" }
+      ]
+    },
+    {
+      "id": 67,
+      "title": "Penyegelan Iblis Malas Saat Ujian",
+      "description": "Di malam sebelum ujian, dua siswa melakukan 'ritual sihir pemanggil kecerdasan' dan berusaha menyegel 'Iblis Rasa Kantuk' yang menyerang otak mereka.",
+      "genre": "Comedy/School Life/Chuunibyou",
+      "castCount": 2,
+      "lines": [
+        { "speaker": "Koui", "jp": "（ノートに謎の魔法陣を描きながら）リョウタ、準備はいいか？今から『知恵の神』を召喚し、明日の中間テストの回答を脳内に直接ダウンロードする！", "romaji": "Ryoota, junbi wa ii ka? Ima kara 'Chie no Kami' o shookan shi, ashita no chuukan tesuto no kaitoo o nounai ni chokusetsu daunroodo suru!", "indo": "*(Menggambar lingkaran sihir di buku catatan)* \"Ryota, sudah siap? Sekarang kita akan memanggil 'Dewa Kebijaksanaan' untuk mengunduh jawaban ujian besok langsung ke dalam otak kita!\"" },
+        { "speaker": "Ryota", "jp": "（目をこすりながら欠伸する）コウイ……それより普通に教科書読んだ方がよくないか？っていうか、もう夜の２時だぞ。睡魔という名の魔王に勝てそうにない……。", "romaji": "Koui... sore yori futsuu ni kyoukasho yonda hoo ga yokunai ka? Tteiuka, mou yoru no ni-ji da zo. Suima to iu na no maoo ni katesou ni nai...", "indo": "*(Mengucek mata sambil menguap)* \"Koui... bukannya lebih efektif kalau kita belajar buku pelajaran biasa aja? Lagian udah jam 2 malam nih. Rasanya aku mau kalah sama Raja Iblis yang namanya 'Rasa Kantuk'...\"" },
+        { "speaker": "Koui", "jp": "（リョウタの肩を掴み）諦めるな！睡魔は暗黒結社が送り込んだ刺客だ！赤いドリンク（エナジードリンク）を飲め！カフェインの結界を張るんだ！", "romaji": "Akirameru na! Suima wa ankoku soshiki ga okorikonda shikaku da! Akai dorinku o nome! Kafein no kekkai o haru n da!", "indo": "*(Memegang bahu Ryota)* \"Jangan menyerah! Rasa kantuk itu adalah pembunuh bayaran yang dikirim organisasi kegelapan! Minum 'Minuman Energi' ini! Pasang Perisai Kafein sekarang!\"" },
+        { "speaker": "Ryota", "jp": "（ドリンクを飲んで急に目を見開く）おお……魔力が湧き上がってくる！脳のギアが上がったぞ！よし、数学の公式を解読（解く）するぞ！！", "romaji": "Oo... maryoku ga wakiagatte kuru! Nou no gia ga agatta zo! Yoshi, suugaku no koushiki o kaidoku suru zo!!", "indo": "*(Minum lalu matanya terbelalak)* \"Ooh... energi sihirku meluap-luap! Otakku langsung berpindah gigi! Oke, mari kita pecahkan kode 'Rumus Matematika' ini!!\"" },
+        { "speaker": "Koui", "jp": "（１分後に机に突っ伏して爆睡する）スースー……（撃沈）", "romaji": "Suu suu... (Gekichin)", "indo": "*(1 menit kemudian langsung tertidur lelap di atas meja)* \"*Zzz... Zzz...* (Tumbang)\"" }
+      ]
+    },
+    {
+      "id": 68,
+      "title": "Penguasa Badai dan Petir Malam Hari",
+      "description": "Di balkon kamar saat hujan deras dan petir menyambar, seorang pemuda memakai handuk hitam seperti jubah sambil berteriak memerintahkan langit untuk tunduk pada kehendaknya.",
+      "genre": "Comedy/Chuunibyou",
+      "castCount": 1,
+      "lines": [
+        { "speaker": "Protagonist", "jp": "（ベランダに出で、激しい雨と雷を見上げる。黒いタオルをマントのように羽織る）フハハハ！見ろ、天が俺の覚醒を祝っている！響き渡れ、怒りの雷鳴（インフェルノ）よ！", "romaji": "Fuhahaha! Miro, ten ga ore no kakusei o iwatte iru! Hibikiwatare, ikari no raimei yo!", "indo": "*(Berdiri di balkon, menatap hujan deras dan petir. Memakai handuk hitam seperti jubah)* \"Fuhahaha! Lihatlah, langit menyambut kebangkitanku! Bergemuruhlah, Wahai Petir Amarah (*Inferno*)!!\"" },
+        { "speaker": "Protagonist", "jp": "（手を空にかざす）この世界は偽りに満ちている……。だが心配するな、俺がこの稲妻の力で、すべての罪を洗い流してやる！", "romaji": "Kono sekai wa itsuwari ni michite iru... Daga shinpai suru na, ore ga kono inazuma no chikara de, subete no tsumi o arainagashite yaru!", "indo": "*(Mengarahkan tangan ke langit)* \"Dunia ini dipenuhi kebohongan... Tapi jangan khawatir, dengan kekuatan petir ini, aku akan menyapu bersih semua dosa manusia!\"" },
+        { "speaker": "Action", "jp": "（となりの部屋の窓が開き、母親の大声が響く）", "romaji": "Tonari no heya no mado ga hiraki, hahaoya no oogoe ga hibiku", "indo": "*Pintu jendela kamar sebelah terbuka, suara Ibu berteriak melengking*" },
+        { "speaker": "Mother (Voice)", "jp": "「ちょっと勝！何ベランダでタオル羽織って叫んでんの！近所迷惑でしょ！早く中入りなさい！」", "romaji": "Chotto Masaru! Nani beranda de taoru haotte sakandendo! Kinjo meiwaku desho! Hayaku naka irinasai!", "indo": "\"Masaru! Ngapain kamu di balkon hujan-hujan pakai handuk begitu?! Bikin malu tetangga aja! Cepat masuk!\"" },
+        { "speaker": "Protagonist", "jp": "（一瞬で肩をすぼめ、小声で）「あ、はい……今入ります……」（ポーズを解いてそそくさと部屋に戻る）", "romaji": "A, hai... ima hairimasu...", "indo": "*(Seketika ciut, berbisik)* \"A-Ah, iya Bu... ini langsung masuk kok...\" *(Langsung copot handuk dan kabur masuk kamar)*" }
+      ]
+    },
+    {
+      "id": 69,
+      "title": "Perang Dodgeball Antar Dimensi",
+      "description": "Pertandingan olahraga dodgeball biasa berubah menjadi pertempuran bola energi pemusnah massal di mata Ryuga dan Akito, membuat guru olahraga bingung setengah mati.",
+      "genre": "Comedy/Action/Chuunibyou",
+      "castCount": 3,
+      "lines": [
+        { "speaker": "Ryuga", "jp": "（ドッジボールを両手で包み込み、妖しく笑う）アキト……この球に込められた圧縮魔力が分かるか？お前の運命もここまでだ！", "romaji": "Akito... kono tama ni komerareta atshuku maryoku ga wakaru ka? Omae no unmei mo koko made da!", "indo": "*(Memegang bola dodgeball dengan kedua tangan, tersenyum jahat)* \"Akito... bisakah kamu merasakan kompresi sihir pekat di dalam bola ini? Takdirmu berakhir di sini!\"" },
+        { "speaker": "Akito", "jp": "（構えを取り、不敵に笑う）ふん、やれるものならやってみろ、リュウガ！俺の『絶対回避領域（アブソリュート・ディフェンス）』を破れるかな？！", "romaji": "Fun, yareru mono nara yattemiro, Ryuuga! Ore no 'Abusoryuuto Difensu' o yareru kana?!", "indo": "*(Memasang kuda-kuda)* \"Hmph, coba saja kalau bisa, Ryuga! Apa kamu bisa menembus 'Area Penghindar Mutlak'-ku?!\"" },
+        { "speaker": "Ryuga", "jp": "喰らえ！超・極大暗黒球（ダークネス・グラビティ）ーーーッ！！（ボールを全力で投げる）", "romaji": "Kurae! Choo Gokudai Ankokukyuu (Daakunesu Gurabiti)---!!", "indo": "\"Rasakan ini! Bola Kegelapan Super Ekstrim (*Darkness Gravity*)---!! *(Melempar bola sekuat tenaga)*\"" },
+        { "speaker": "Sensei", "jp": "（ピーッ！と笛を吹き、あきれ顔で）「はい、リュウガ外野ねー。あと技名叫んで投げないでくだ・さ・い。」", "romaji": "Hai, Ryuuga gaiya ne. Ato wazame sakande nagenaide kudasai.", "indo": "*(Meniup peluit dengan wajah lelah)* \"Oke, Ryuga lemparannya keluar garis lapangan ya. Terus tolong jangan teriak-teriak nama jurus pas melempar bola.\"" },
+        { "speaker": "Akito", "jp": "（ガッツポーズ）くくく……見事だ、先生（審判）。俺の領域展開に乗っかって助けてくれるとはな……！", "romaji": "Kukuku... migoto da, sensei. Ore no ryooiki tenkai ni nokkarte tasukete kureru to wa na...!", "indo": "*(Memasang pose seolah menang)* \"Kukuku... Luar biasa, Pak Guru (Sang Hakim Dunia). Tidak sangka Anda ikut memicu 'Domain Expansion' untuk menyelamatkanku...!\"" }
+      ]
+    },
+    {
+      "id": 70,
+      "title": "Pernyataan Cinta Sang Raja Kegelapan",
+      "description": "Kagami mencoba menyatakan cintanya pada Hina, namun karena penyakit chuunibyou-nya, kalimat cintanya malah terdengar seperti ajakan kontrak persekutuan abadi melawan kegelapan.",
+      "genre": "Comedy/Romance/Chuunibyou",
+      "castCount": 2,
+      "lines": [
+        { "speaker": "Kagami", "jp": "（夕暮れの校舎の裏で、壁に手をついて格好つける）ヒナ……呼び出した理由が分かるか？世界が終末に向かう今、お前に伝えておかなければならない『契約』がある。", "romaji": "Hina... yobidashita riyuu ga wakaru ka? Sekai ga shuumatsu ni mukau ima, omae ni tsutaete okanakereba naranai 'keiyaku' ga aru.", "indo": "*(Di belakang gedung sekolah saat senja, kabe-don sok keren)* \"Hina... kamu tahu kenapa aku memanggilmu ke sini? Di saat dunia sedang menuju kehancuran ini, ada sebuah 'Kontrak' yang harus kusampaikan padamu.\"" },
+        { "speaker": "Hina", "jp": "（首をかしげて困惑する）え……？契約？カガミくん、何の話……？", "romaji": "E...? Keiyaku? Kagami-kun, nani no hanashi...?", "indo": "*(Meninggikan alis, bingung)* \"Eh...? Kontrak? Kagami-kun, ngomongin apa sih...?\"" },
+        { "speaker": "Kagami", "jp": "（目をそらし、急に早口＆赤面になる）だからその！俺の『闇の伴侶』として、生涯俺の隣で戦ってほしいと言っているんだ！……つまり、その……付き合ってくれ！", "romaji": "Dakara sono! Ore no 'Yami no Hanryo' toshite, shoogai ore no tonari de tatakatte hoshii to itte iru n da! ...Tsumari, sono... tsukiatte kure!", "indo": "*(Memalingkan wajah, mendadak bicara cepat dan mukanya merah)* \"Maksudku itu! Aku mau kamu jadi 'Pasangan Kegelapan'-ku dan bertarung di sampingku seumur hidup! ...Intinya, mmm... mau kan pacaran sama aku?!\"" },
+        { "speaker": "Hina", "jp": "（ぽかんとした後、クスッと笑う）ふふっ、言い方が相変わらず大げさだなあ。……うん、いいよ。喜んでその『契約』、結んであげる！", "romaji": "Fufu, iikata ga aikawarazu oogesa da naa. ...Un, ii yo. Yorokonde sono 'keiyaku', musunde ageru!", "indo": "*(Kaget sebentar lalu tertawa manis)* \"Fufu, caramu ngomong tetap berlebihan kayak biasanya ya. ...Iya, aku mau. Dengan senang hati aku terima 'kontrak' itu!\"" },
+        { "speaker": "Kagami", "jp": "（ショックと嬉しさで挙動不審になる）ぜ、真理の契約が成立した……！邪眼が……暴走しそうだ（照れ隠し）！", "romaji": "Ze, shinri no keiyaku ga seiritsu shita...! Jagan ga... boosou shisou da!", "indo": "*(Kaget dan senang sampai salah tingkah)* \"K-Kontrak Kebenaran telah terjalin...! Mata iblisku... rasanya mau meledak (*malu banget*)!\"" }
+      ]
+    },
+    {
+      "id": 71,
+      "title": "Lembur Malam Jumat",
+      "description": "Rekan kerja senior dan junior tertahan di kantor pada Jumat malam untuk menyelesaikan revisi dadakan dari atasan. Di tengah kelelahan, sepiring mi instan hangat menjadi penghibur.",
+      "genre": "Office/Slice of Life",
+      "castCount": 2,
+      "lines": [
+        { "speaker": "Kouhai", "jp": "（ため息をつき、画面を凝視する）はぁ……金曜日の夜８時に『明日までに修正』なんて、部長も酷すぎますよ……。", "romaji": "Haa... kin'youbi no yoru hachi-ji ni 'ashita made ni shuusei' nante, buchou mo hidosugimasu yo...", "indo": "*(Menghela napas, menatap layar monitor)* \"Huft... ngasih revisi jam 8 malam di hari Jumat buat dikumpulin besok, Manajer beneran tega banget ya...\"" },
+        { "speaker": "Senpai", "jp": "（インスタントラーメンにお湯を注ぎながら笑う）はは、まあまあ。会社ってのはそういうもんさ。ほら、カップラーメンできたぞ。食ってからやろう。", "romaji": "Haha, maa maa. Kaisha tte no wa sou iu mon sa. Hora, kappu raamen dekita zo. Kutte kara yarou.", "indo": "*(Tersenyum sambil menuangkan air panas ke mi instan)* \"Hahaha, ya mau gimana lagi. Dunia kerja memang kayak gini. Nih, mi instannya udah matang. Makan dulu baru lanjut lagi.\"" },
+        { "speaker": "Action", "jp": "（二人が静かなオフィスで温かいラーメンを啜る）", "romaji": "Futari ga shizuka na ofisu de atatakai raamen o susuru", "indo": "*Keduanya menyeruput mi instan hangat di tengah ruang kantor yang hening*" },
+        { "speaker": "Kouhai", "jp": "先輩……なんでいつもそんなに冷静でいられるんですか？私ならもう投げ出して辞めたくなります。", "romaji": "Senpai... nande itsumo sonna ni reisei de irareru n desu ka? Watashi nara mou nagedashite yametaku narimasu.", "indo": "\"Senior... kenapa sih selalu bisa tenang banget kayak gini? Kalau aku udah pengen menyerah terus resign aja rasanya.\"" },
+        { "speaker": "Senpai", "jp": "俺も昔はそうだったよ。でもな、大変な時に一緒に残ってくれる仲間がいると、意外と悪くないなって思えるんだ。……よし、サクッと終わらせて飲みに行くぞ！", "romaji": "Ore mo mukashi wa sou datta yo. Demo na, taihen na toki ni issho ni nokotte kureru nakama ga iru to, igaito warukunai na tte omoeru n da. ...Yoshi, sakutto owarasete nomi ni iku zo!", "indo": "\"Dulu aku juga gitu kok. Tapi ya, kalau ada rekan kerja yang mau berjuang bareng saat masa-masa sulit kayak gini, rasanya nggak buruk-buruk amat. ...Sip, ayo kita selesaikan ini cepat-cepat terus lanjut nongkrong!\"" }
+      ]
+    },
+    {
+      "id": 72,
+      "title": "Surat Pengunduran Diri Rahasia",
+      "description": "Sato memberanikan diri menyerahkan surat resign kepada manajernya yang galak. Namun, reaksi tak terduga sang manajer justru membongkar rasa kepedulian yang selama ini tersembunyi.",
+      "genre": "Office/Drama",
+      "castCount": 2,
+      "lines": [
+        { "speaker": "Sato", "jp": "（震える手で白い封筒を机に置く）部長……お時間よろしいでしょうか。これ……受け取ってください。", "romaji": "Buchou... o-jikan yoroshii deshou ka. Kore... uketotte kudasai.", "indo": "*(Dengan tangan gemetar meletakkan amplop putih di meja)* \"Manajer... apa ada waktu sebentar? Tolong... terima surat ini.\"" },
+        { "speaker": "Manager", "jp": "（眼鏡を外し、封筒を見つめて深いため息をつく）……退職願か。サトウ、本気なのか？", "romaji": "...Taishokunegai ka. Satou, honki na no ka?", "indo": "*(Melepas kacamata, menatap amplop lalu menghela napas panjang)* \"...Surat pengunduran diri? Sato, kamu beneran serius?\"" },
+        { "speaker": "Sato", "jp": "はい。自分の力不足を感じていて……部長にご迷惑ばかりおかけしているので。", "romaji": "Hai. Jibun no chikarabusoku o kanjite ite... buchou ni gomeiwaku bakari okake shite iru node.", "indo": "\"Iya. Saya merasa kemampuan saya masih sangat kurang... dan selama ini cuma merepotkan Manajer saja.\"" },
+        { "speaker": "Manager", "jp": "（静かに立ち上がり、サトウの肩を強く叩く）バカ野郎。お前が毎日どれだけ努力しているか、俺が一番よく知っている。迷惑なんか一度も思ったことはない。", "romaji": "Baka yarou. Omae ga mainichi dore dake doryoku shite iru ka, ore ga ichiban yoku shitte iru. Meiwaku nanka ichido mo omotta koto wa nai.", "indo": "*(Berdiri perlahan, menepuk pundak Sato dengan mantap)* \"Bodoh. Cuma aku yang paling tahu seberapa keras kamu berjuang setiap hari. Aku nggak pernah merasa direpotkan sama sekali.\"" },
+        { "speaker": "Sato", "jp": "（驚いて目を見開き、涙ぐむ）部長……。", "romaji": "Buchou...", "indo": "*(Terkejut, matanya mulai berkaca-kaca)* \"Manajer...\"" },
+        { "speaker": "Manager", "jp": "この封筒は預かっておく。だが一週間、考え直せ。お前はうちのチームに必要な人間だ。", "romaji": "Kono fuutou wa azakatte oku. Daga isshuukan, kangaenaose. Omae wa uchi no tiimu ni hitsuyou na ningen da.", "indo": "\"Amplop ini bakal aku simpan dulu. Tapi beri waktu seminggu buat pikirkan ulang. Kamu itu orang yang sangat dibutuhkan di tim ini.\"" }
+      ]
+    },
+    {
+      "id": 73,
+      "title": "Presentasi Pertama Karyawan Baru",
+      "description": "Seorang karyawan baru berlatih presentasi proyek besar sendirian di toilet kantor, mencoba menenangkan jantungnya yang berdebar dan mempraktikkan pose percaya diri.",
+      "genre": "Office/Comedy",
+      "castCount": 1,
+      "lines": [
+        { "speaker": "Protagonist", "jp": "（鏡の前でネクタイを整え、深呼吸する）スー……ハー……。大丈夫、落ち着け僕。練習は百回以上やったんだ。", "romaji": "Suu... haa... Daijoubu, ochitsuke boku. Renshuu wa hyakkai ijou yatta n da.", "indo": "*(Membetulkan dasi di depan cermin, menarik napas dalam)* \"Tarik napas... hembuskan... Tenang, aku pasti bisa. Aku kan sudah latihan lebih dari seratus kali.\"" },
+        { "speaker": "Protagonist", "jp": "（笑顔を作るが顔が引きつる）『皆様、本日はお時間をいただき……』ダメだ、顔が完全に凍りついている！緊張で心臓が口から出そうだ！", "romaji": "'Minasan, honjitsu wa o-jikan o itadaki...' Dame da, kao ga kanzen ni kooritsuite iru! Kinchou de shinzou ga kuchi kara desou da!", "indo": "*(Mencoba tersenyum tapi kaku)* \"'Hadirin sekalian, terima kasih atas waktu yang...' Ah nggak bisa! Mukaku kaku banget! Jantungku rasanya mau melompat keluar karena gugup!\"" },
+        { "speaker": "Action", "jp": "（自分の両頬をパチンと叩いて気合を入れる）", "romaji": "Jibun no ryouhoho o pachin to tatake te kiai o ireru", "indo": "*Menepak kedua pipinya sendiri untuk membakar semangat*" },
+        { "speaker": "Protagonist", "jp": "よし！失敗を恐れるな。新人の武器は元気と情熱だ！企画書の良さは僕が一番わかっている。いってきます！", "romaji": "Yoshi! Shippai o osoreru na. Shinjin no buki wa genki to jounetsu da! Purezen no yosa wa boku ga ichiban wakatte iru. Ittekimasu!", "indo": "\"Oke! Jangan takut gagal. Senjata karyawan baru itu semangat dan antusiasme! Cuma aku yang paling paham bagusnya proyek ini. Mari kita mulai!\"" }
+      ]
+    },
+    {
+      "id": 74,
+      "title": "Cinta Sembunyi-Sembunyi di Pantri Kantor",
+      "description": "Dua rekan kerja yang diam-diam berpacaran memanfaatkan sela-sela waktu menyeduh kopi di pantri untuk melepas rindu, namun selalu panik setiap kali mendengar langkah kaki mendekat.",
+      "genre": "Office/Romance",
+      "castCount": 2,
+      "lines": [
+        { "speaker": "Ken", "jp": "（給湯室でコーヒーを淹れながら、こっそりユカを見る）ユカ、今日の服すごく似合ってるよ。朝からずっと言いたかったんだ。", "romaji": "Yuka, kyou no fuku sugoku niatteru yo. Asa kara zutto iitakatta n da.", "indo": "*(Sedang menyeduh kopi di pantri, melirik Yuka)* \"Yuka, baju kamu hari ini cocok banget. Dari pagi aku udah pengen ngomong gini.\"" },
+        { "speaker": "Yuka", "jp": "（照れながら周りを気にする）ちょっと、ケン君！社内でそんなこと言わないでよ。誰かに見られたらどうするの？", "romaji": "Chotto, Ken-kun! Shanai de sonna koto iwanaide yo. Dareka ni miraretara dou suru no?", "indo": "*(Malu-malu sambil melihat sekeliling)* \"Ken! Jangan ngomong gitu di kantor dong. Gimana kalau ada yang lihat?\"" },
+        { "speaker": "Ken", "jp": "（少し近づき、声を潜める）大丈夫だって。みんな今、会議室で月次報告中だから……（手を重ねる）会いたかったよ。", "romaji": "Daijoubu datte. Minna ima, kaigishitsu de getsuji houkokuchuu dakara... Aitakatta yo.", "indo": "*(Mendekat sedikit, berbisik)* \"Tenang aja, semua orang lagi rapat bulanan di ruang rapat kok... *(Menggenggam tangannya)* Aku kangen banget sama kamu.\"" },
+        { "speaker": "Action", "jp": "（廊下から足音が近づいてくる音が聞こえる）", "romaji": "Rouka kara ashioto ga chikaduku oto ga kikoeru", "indo": "*Suara langkah kaki terdengar mendekat dari lorong*" },
+        { "speaker": "Yuka", "jp": "（パニックでケンを軽く押す）やばい！誰か来る！（大声で）『あ、ケンさん！コピー機の用紙、補充しておきました！』", "romaji": "Yabai! Dareka kuru! (Oogoe de) 'A, Ken-san! Kopiiki no Youshi, hojuu shite okimashita!'", "indo": "*(Panik mendorong Ken pelan)* \"Gawat! Ada orang datang! *(Berteriak kencang)* 'Ah, Pak Ken! Kertas mesin fotokopiannya sudah saya isi ya!'\"" },
+        { "speaker": "Ken", "jp": "（直立不動で敬礼する）『あ、ありがとうございます、ユカさん！助かります！』", "romaji": "'A, arigatou gozaimasu, Yuka-san! Tasukarimasu!'", "indo": "*(Langsung berdiri tegap dan hormat)* \"'A-Ah, terima kasih banyak, Bu Yuka! Sangat membantu!'\"" }
+      ]
+    },
+    {
+      "id": 75,
+      "title": "Rapat yang Bisa Selesai Lewat Email",
+      "description": "Rapat maraton selama 2 jam yang dipimpin bos penyuka istilah keren mendadak berakhir dengan kesimpulan sepele yang bisa saja disampaikan dalam satu baris pesan email.",
+      "genre": "Office/Comedy",
+      "castCount": 3,
+      "lines": [
+        { "speaker": "Tanaka (Boss)", "jp": "（気取ったポーズで２時間熱弁を振るう）……というわけで、我が社のイノベーションには柔軟なシナジーが必要なわけだ。諸君、何か質問はあるかね？", "romaji": "...to iu wake de, wagasha no inobeeshon ni wa juunan na shinajii ga hitsuyou na wake da. Shokun, nanika shitsumon wa aru kane?", "indo": "*(Berpose sok keren setelah pidato 2 jam)* \"...Oleh karena itu, inovasi perusahaan kita membutuhkan sinergi yang fleksibel. Ada pertanyaan, saudara-saudara?\"" },
+        { "speaker": "Budi", "jp": "（あくびを噛み殺しながら、ノートに落書きしている）（心の声：２時間聞いてたけど、カタカナ語多すぎて意味がさっぱり分からん……）", "romaji": "(Kokoro no koe: Ni-jikan kiiketa kedo, katakanago oosugite imi ga sappari wakaran...)", "indo": "*(Menahan kantuk sambil mencoret-coret catatan)* *(Monolog batin: Udah dengerin 2 jam, tapi istilah kerennya kebanyakan sampai aku nggak paham maksudnya apa...)*" },
+        { "speaker": "Siti", "jp": "（手を挙げて確認する）田中さん、確認ですが……今日の結論は『来週のイベントのポスターの色を青から赤に変える』ということでよろしいでしょうか？", "romaji": "Tanaka-san, kakunin desu ga... kyou no ketsuron wa 'raishuu no ibento no posutaa no iro o ao kara aka ni kaeru' to iu koto de yoroshii deshou ka?", "indo": "*(Mengangkat tangan untuk konfirmasi)* \"Pak Tanaka, sekadar konfirmasi... kesimpulan rapat hari ini cuma 'mengubah warna poster acara minggu depan dari biru jadi merah', kan?\"" },
+        { "speaker": "Tanaka (Boss)", "jp": "（笑顔で親指を立てる）その通り！よし、解散！", "romaji": "Sono toori! Yoshi, kaisan!", "indo": "*(Tersenyum sambil mengacungkan jempol)* \"Tepat sekali! Sip, rapat selesai!\"" },
+        { "speaker": "Budi & Siti", "jp": "（口を揃えて心の中で叫ぶ）（メール１本で済むだろーーーっ！！）", "romaji": "(Meeru ippon de sumu darooo!!)", "indo": "*(Berteriak dalam hati bersamaan)* \"(KAN BISA CUMA KIRIM EMAIL AJAAAAA!!)\"" }
+      ]
+    },
+    {
+      "id": 76,
+      "title": "Penyelamat Deadline Menit Terakhir",
+      "description": "File presentasi penting terhapus 10 menit sebelum rapat dengan klien utama. Kaito dan Ren bekerja sama bagaikan agen rahasia untuk memulihkan data tersebut tepat waktu.",
+      "genre": "Office/Action-Comedy",
+      "castCount": 2,
+      "lines": [
+        { "speaker": "Kaito", "jp": "（頭を抱えて絶叫する）クソッ！クライアントとの会議まであと１０分なのに、メイン資料のデータが消えた！？", "romaji": "Kusoo! Kuraianto to no kaigi made ato juppun nanoni, mein shiryou no deeta ga kieta!?", "indo": "*(Meremas kepala dan berteriak)* \"Sialan! Rapat sama klien tinggal 10 menit lagi, tapi file presentasi utamanya malah terhapus?!\"" },
+        { "speaker": "Ren", "jp": "（キーボードを高速で叩きながら）落ち着け、カイト！バックアップサーバーの履歴をチェックする。俺のタイピング速度を舐めるなよ！", "romaji": "Ochitsuke, Kaito! Bakkuappu saabaa no rireki o chekku suru. Ore no taipingu sokudo o nameru na yo!", "indo": "*(Mengetik keyboard dengan sangat cepat)* \"Tenang, Kaito! Aku lagi cek riwayat server cadangan. Jangan remehkan kecepatan mengetikku!\"" },
+        { "speaker": "Kaito", "jp": "（冷や汗を流しながら画面を凝視する）頼む……出てくれ！この案件を落としたら、俺たちのチームは終わりだ！", "romaji": "Tanomu... detekure! Kono anken o otoshitara, oretachi no tiimu wa owari da!", "indo": "*(Berkeringat dingin menatap layar)* \"Tolong... muncul dong! Kalau proyek ini lepas, tim kita bakal tamat!\"" },
+        { "speaker": "Ren", "jp": "（エンターキーを強く叩く）見つけた！復元完了だ！USBに転送したぞ、走れカイト！", "romaji": "Mitsuketa! Fukugen kanryou da! Yuu-esubi ni tensou shita zo, hashire Kaito!", "indo": "*(Menekan tombol Enter dengan keras)* \"Ketemu! Pemulihan selesai! Udah ku-transfer ke flashdisk, lari Kaito!\"" },
+        { "speaker": "Kaito", "jp": "（USBをひっつかんで走り出す）サンキュー、レン！お前は命の恩人だーーっ！", "romaji": "Sankyuu, Ren! Omae wa inochi no onjin daaa!", "indo": "*(Mencabut flashdisk dan mulai berlari)* \"Makasih, Ren! Kamu beneran penyelamat hidupkuuu!\"" }
+      ]
+    },
+    {
+      "id": 77,
+      "title": "Rahasia Rahasia Sang Bos Galak",
+      "description": "Sang sekretaris tidak sengaja menemukan bahwa bosnya yang terkenal dingin dan ditakuti ternyata adalah seorang penggemar berat Idol imut dan mengoleksi merch-nya.",
+      "genre": "Office/Comedy",
+      "castCount": 2,
+      "lines": [
+        { "speaker": "Aoi (Secretary)", "jp": "（書類を持って社長室に入り、フリーズする）……専務、失礼します。……あの、それは……？", "romaji": "...Senmu, shitsurei shimasu. ...Ano, sore wa...?", "indo": "*(Membawa dokumen masuk ke ruang direktur, lalu mematung)* \"...Pak Direktur, permisi. ...Anu, itu apa ya...?\"" },
+        { "speaker": "Yamada (Boss)", "jp": "（ピンクのアクリルスタンドを持ってポーズを取っていたが、慌てて隠す）あ、アオイ君！ノックをしてから入れと言っただろ！これは……ただの業務資料だ！", "romaji": "A, Aoi-kun! Nokku o shite kara ire to itta daro! Kore wa... tada no gyoumu shiryou da!", "indo": "*(Kaget saat memegang merch idol pink, bergegas menyembunyikannya)* \"A-Ah, Aoi! Kan saya sudah bilang ketuk pintu dulu sebelum masuk! Ini... cuma dokumen kerjaan biasa kok!\"" },
+        { "speaker": "Aoi (Secretary)", "jp": "（じーっと見つめる）それ……今大人気の魔法少女アニメ『キュート・ルナ』の限定アクスタですよね？専務、推し活中だったんですか？", "romaji": "Sore... ima dainingi no mahou shoujo anime 'Kyuuto Runa' no gentei akusuta desu yo ne? Senmu, oshikatsu-chū dattan desu ka?", "indo": "*(Menatap curiga)* \"Itu... acrylic stand edisi terbatas mahou shoujo 'Cute Luna' yang lagi populer banget kan? Pak Direktur ternyata fanboy idol juga?\"" },
+        { "speaker": "Yamada (Boss)", "jp": "（汗をかきながら手を合わせる）頼む、アオイ君！社内の誰にも言わないでくれ！『冷酷な鬼専務』のキャラが崩壊してしまう！給料アップさせるから！", "romaji": "Tanomu, Aoi-kun! Shanai no dare ni mo iwanaide kure! 'Reikoku na oni-senmu' no kyara ga houkai shite shimau! Kyuuryou appu saseru kara!", "indo": "*(Berkeringat dingin sambil menyatukan tangan)* \"Saya mohon, Aoi! Jangan kasih tahu siapa pun di kantor! Reputasi saya sebagai 'Direktur Iblis yang Dingin' bisa hancur! Nanti saya naikkan gajimu!\"" },
+        { "speaker": "Aoi (Secretary)", "jp": "（ニヤリと笑う）了解しました、専務。……ちなみに私もルナちゃん推しです。今度グッズ交換しましょう。", "romaji": "Ryoukai shimashita, senmu. ...Chinami ni watashi mo Runa-chan oshi desu. Kondo gundzu koukan shimashou.", "indo": "*(Tersenyum nakal)* \"Siap, Pak Direktur. ...Ngomong-ngomong saya juga fans berat Luna-chan. Kapan-kapan kita barter barang koleksi ya.\"" }
+      ]
+    },
+    {
+      "id": 78,
+      "title": "Pencuri Makanan di Kulkas Kantor",
+      "description": "Tiga karyawan melancarkan investigasi bergaya detektif untuk memburu pelaku misterius yang sering mencuri puding berharga mereka di kulkas pantri.",
+      "genre": "Office/Mystery-Comedy",
+      "castCount": 3,
+      "lines": [
+        { "speaker": "Ryu", "jp": "（給湯室の冷蔵庫を開けて絶叫する）嘘だろ！？俺の特製高級プリンがない！名前書いておいたのに！", "romaji": "Uso daro!? Ore no tokusei koukyuu purin ga nai! Namae kaite oita noni!", "indo": "*(Membuka kulkas pantri lalu berteriak)* \"Bohong kan?! Puding premium milikku hilang! Padahal udah kutulis namaku di kemasannya!\"" },
+        { "speaker": "Hana", "jp": "（腕組みをして推理する）これで今月３回目よ、リュウ。犯人はこのフロアの中にいるわ。犯行時間は１２時から１３時の間……。", "romaji": "Kore de kongetsu sankaime yo, Ryuu. Hannin wa kono furoa no naka ni iru wa. Hankou jikan wa juuni-ji kara juusan-ji no aida...", "indo": "*(Bersedekap menganalisis)* \"Ini udah ketiga kalinya bulan ini, Ryu. Pelakunya pasti ada di lantai ini. Waktu kejadian antara jam 12 sampai jam 1 siang...\"" },
+        { "speaker": "Shin", "jp": "（口元にクリームをつけながら入ってくる）お疲れ様ー。あ、リュウさん、冷蔵庫にあったプリン美味しかったですよ！ごちそうさまでした！", "romaji": "Otsukaresamaa. A, Ryu-san, reizouko ni atta purin oishikatta desu yo! Gochisousama deshita!", "indo": "*(Masuk sambil ada sisa krim di sudut bibir)* \"Halo semuanya~. Oh, Pak Ryu, puding yang di kulkas tadi enak banget lho! Terima kasih ya!\"" },
+        { "speaker": "Ryu & Hana", "jp": "（固まってシンを睨みつける）……。", "romaji": "(Katamatte Shin o niramitsukeru) ...", "indo": "*(Mematung lalu menatap tajam ke arah Shin)* \"...\"" },
+        { "speaker": "Shin", "jp": "（空気を察して冷や汗を流す）え……？あの『リュウ』って……龍（ドラゴン）のマークのことじゃなかったんですか……？", "romaji": "E...? Ano 'Ryuu' tte... Doragon no maaku no koto janakatta n desu ka...?", "indo": "*(Baru sadar lalu berkeringat dingin)* \"Eh...? Tulisan 'Ryu' di kemasannya... bukannya maksudnya logo gambar Naga ya...?\"" }
+      ]
+    },
+    {
+      "id": 79,
+      "title": "Sisi Lain Manajer Galak",
+      "description": "Seorang manajer yang dikenal tegas dan tanpa kompromi terduduk sendirian di ruangannya saat larut malam, mengungkapkan kelelahannya dan keinginannya untuk melindungi timnya.",
+      "genre": "Office/Drama",
+      "castCount": 1,
+      "lines": [
+        { "speaker": "Protagonist", "jp": "（静かなオフィスでデスクの明かりだけを点け、頭を抱える）ふぅ……今日もまたみんなに厳しく言いすぎてしまったな……。", "romaji": "Fuu... kyou mo mata minna ni kibishiku iisugite shimatta na...", "indo": "*(Di kantor yang sepi, menyalakan lampu meja sambil memegangi kepala)* \"Huft... hari ini aku ngomongnya terlalu galak lagi ya ke anak-anak...\"" },
+        { "speaker": "Protagonist", "jp": "（部下たちのデスクを見渡す）嫌われてもいい。でも、甘い顔をしてミスを見過ごせば、現場で困るのは彼ら自身なんだ。", "romaji": "Kirawarete mo ii. Demo, amai kao o shite misu o misugoseba, genba de komaru no wa karera jishin nan da.", "indo": "*(Menatap meja kerja para bawahannya)* \"Dibenci juga nggak apa-apa. Tapi kalau aku terlalu baik dan membiarkan kesalahan mereka, yang bakal susah di lapangan nanti ya mereka sendiri.\"" },
+        { "speaker": "Action", "jp": "（引き出しから部下たちへのお菓子の差し入れを取り出し、デスクに置く）", "romaji": "Hikidashi kara buka-tachi e no okashi no sashiire o toridashi, desuku ni oku", "indo": "*Mengambil camilan dari laci meja dan meletakkannya di meja bawahannya*" },
+        { "speaker": "Protagonist", "jp": "『いつも厳しい指導ありがとうございます』なんて言わなくていい。とにかく、全員が無事に成長してくれればそれでいいんだ。明日も頑張ろう。", "romaji": "'Itsumo kibishii shidou arigatou gozaimasu' nante iwanakute ii. Tonikaku, zen'in ga buji ni seichou shite kureba sore de iin da. Ashita mo ganbarou.", "indo": "\"Nggak perlu bilang 'Terima kasih atas bimbingannya' segala. Yang penting kalian semua bisa berkembang dengan baik. Besok mari kita berjuang lagi.\"" }
+      ]
+    },
+    {
+      "id": 80,
+      "title": "Pesta Minum Sepulang Kerja (Nomikai)",
+      "description": "Di sebuah kedai minum sepulang kerja, batasan hierarki kantor perlahan mencair. Sang bos yang mabuk memberikan pujian tulus kepada karyawan barunya.",
+      "genre": "Office/Slice of Life",
+      "castCount": 3,
+      "lines": [
+        { "speaker": "Sato (Boss)", "jp": "（少し酔っ払ってグラスを掲げる）リナちゃん！入社して３ヶ月、本当によく頑張ってるぞ！カンパーイ！", "romaji": "Rina-chan! Nyūsha shite san-kagetsu, hontou ni yoku ganbatteru zo! Kanpaai!", "indo": "*(Agak mabuk sambil mengangkat gelas)* \"Rina-chan! Sudah 3 bulan bergabung, kamu beneran kerja keras banget! *Cheers*!\"" },
+        { "speaker": "Rina", "jp": "（嬉しそうにグラスを合わせる）ありがとうございます、佐藤部長！最初は怖かったけど、部長のチームで良かったです！", "romaji": "Arigatou gozaimasu, Satou-buchou! Saisho wa kowakatta kedo, buchou no tiimu de yokatta desu!", "indo": "*(Tersenyum gembira menempelkan gelas)* \"Terima kasih banyak, Pak Sato! Awalnya saya takut banget, tapi saya bersyukur bisa masuk tim Bapak!\"" },
+        { "speaker": "Kenji", "jp": "（焼き鳥を食べながら笑う）ほら言っただろ、リナちゃん。部長は仕事中は厳しいけど、飲んだらただの優しいおじさんだって。", "romaji": "Hora itta daro, Rina-chan. Buchou wa shigotochuu wa kibishii kedo, nondara tada no yasashii ojisan datte.", "indo": "*(Makan sate yakitori sambil tertawa)* \"Nah kan benar apa kata aku, Rina. Pak Manager kalau lagi kerja memang galak, tapi kalau udah minum ya cuma bapak-bapak ramah biasa.\"" },
+        { "speaker": "Sato (Boss)", "jp": "（ケンジの首を軽く小脇に抱える）おいケンジ！『ただのおじさん』は余計だ！……でもまあ、みんなでこうして飲めるのが一番の幸せだな。明日からも頼むぞ！", "romaji": "Oi Kenji! 'Tada no ojisan' wa yokei da! ...Demo maa, minna de koushite nomeru no ga ichiban no shiawase da na. Ashita kara mo tanomu zo!", "indo": "*(Merangkul leher Kenji bercanda)* \"Woi Kenji! 'Bapak-bapak biasa' itu berlebihan ya! ...Tapi ya, bisa minum santai bareng kalian kayak gini emang paling bikin bahagia. Mulai besok mohon bantuannya lagi ya!\"" }
+      ]
     }
   ]
 }
