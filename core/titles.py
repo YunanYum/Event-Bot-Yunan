@@ -174,21 +174,21 @@ SHOP_TITLES = {
     "Investor Agensi MAHA5": {
         "price": 12500000, 
         "emoji": "🏛️", 
-        "desc": "Sultan kelas kakap penyokong dana project kelurahan (~1.5 Bulan)"
+        "desc": "Sultan kelas kakap penyokong dana project kelurahan"
     },
     "Kolektor Title & Merch": {
         "price": 25000000, 
         "emoji": "👑", 
-        "desc": "Gelar bergengsi borong semua kosmetik & merch (~2.5 Bulan)"
+        "desc": "Gelar bergengsi borong semua kosmetik & merch"
     },
     "Tuan Tanah Backstage": {
         "price": 50000000, 
         "emoji": "🏰", 
-        "desc": "Pemilik kapling ruang ngobrol paling luas di server (~5 Bulan)"
+        "desc": "Pemilik kapling ruang ngobrol paling luas di server"
     },
     "Petinggi Kelurahan MAHA5": {
         "price": 100000000, 
         "emoji": "💳", 
-        "desc": "Kasta tertinggi pemegang kekuasaan ekonomi MAHA5 (~11 Bulan)"
+        "desc": "Kasta tertinggi pemegang kekuasaan ekonomi MAHA5"
     }
 }
