@@ -212,10 +212,16 @@ class HelpDropdown(discord.ui.Select):
                     ),
                     inline=False
                 )
+
                 if self.has_mod:
                     embed.add_field(
                         name="3️⃣ Impor Naskah Baru (Khusus Staf)",
                         value=f"> `{prefix}uploadscript` ➔ Unggah file `.txt` atau `.json` untuk menambah naskah baru ke katalog secara instan!",
+                        inline=False
+                    ),
+                    embed.add_field(
+                        name="4️⃣ Start Sajam (Khusus Staf)",
+                        value=f"> `{prefix}Sajam Start` ➔ Memulai SAJAM, `{prefix}Sajam End` ➔ untuk Mengakhiri SAJAM",
                         inline=False
                     )
 

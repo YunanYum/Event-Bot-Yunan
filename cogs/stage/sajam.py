@@ -380,7 +380,7 @@ class SajamCog(commands.Cog):
             embed_performer.description = (
                 f"🎶 **Penyanyi Aktif:**\n"
                 f"👉 {self.current_performer.mention}\n\n"
-                f"⭐ *Sedang menguasai panggung!*"
+                f"😭 *OTSUKARE MAHA5*"
             )
             embed_performer.set_thumbnail(url=self.current_performer.display_avatar.url)
         else:
@@ -528,9 +528,9 @@ class SajamCog(commands.Cog):
         total_visitors = len(self.vc_participants)
 
         embed_stats = discord.Embed(
-            title="🏁 Sesi Sajam Selesai! 🏁",
+            title="🏁 Sesi Sajam Selesai😭! 🏁",
             description=(
-                "Terima kasih kepada seluruh peserta dan staf yang telah berpartisipasi!\n"
+                "Terima kasih kepada seluruh peserta dan staf yang telah berpartisipasi di SAJAM:The Last Dance!\n"
                 "Berikut laporan rekapitulasi data sesi jamming kali ini:\n\n"
                 f"🔊 **Lokasi VC:** {self.voice_channel.mention if self.voice_channel else 'Tidak Terdeteksi'}\n"
                 f"⏱️ **Total Durasi:** {duration_str}\n"

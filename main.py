@@ -23,9 +23,8 @@ bot = commands.Bot(command_prefix=PREFIX, intents=intents, help_command=None)
 @tasks.loop(minutes=5)
 async def change_status():
     status_list = [
-        discord.Activity(type=discord.ActivityType.watching, name="Event PPKM & Giveaway"),
-        discord.Activity(type=discord.ActivityType.listening, name="!!help di Backstage"),
-        discord.Activity(type=discord.ActivityType.listening, name="Panggung Sajam & Karaoke")
+        discord.Activity(type=discord.ActivityType.watching, name="OTSU MAHA5"),
+
     ]
     await bot.change_presence(activity=random.choice(status_list))
 

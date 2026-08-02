@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  event-bot-yunan:
+    build: .
+    container_name: event_bot_yunan
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    environment:
+      - TZ=Asia/Jakarta
